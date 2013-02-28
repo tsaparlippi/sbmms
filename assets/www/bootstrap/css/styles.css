@@ -1,0 +1,43 @@
+
+/* Override on jQueryUI */
+.ui-progressbar .ui-progressbar-value { background-image: url(black-tie/images/pbar-ani.gif); }
+
+body {
+	font-family: Microsoft Tai Le;
+	
+	background:url(../img/bground.JPG) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#main-pane{
+	margin:auto; padding:auto;
+}
+
+#main-page-title{
+	background:url(../img/title.PNG) no-repeat center center;
+	width:100%; height:200px; margin-top:10%;
+}
+
+#room-pane-content{
+	margin-top:10%; width:70%;
+}
+
+#room-pane h2{
+	color:whiteSmoke; text-shadow:1px 0px #111; font-size:210%;
+	font-family: Rockwell; float:left;
+}
+
+#room-pane-top{ padding-bottom:40px;}
+/* #room-pane-top ul { list-style:none; float:left; margin-left:0px; }
+#room-pane-top ul li { float:left; margin-right:5px; padding-right: 5px; border-right:1px black dotted;}
+
+#room-pane-top ul .current {
+	background-color: whiteSmoke;
+} */
+
+
+
+.back-btn{ float:right; }
