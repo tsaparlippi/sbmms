@@ -28,34 +28,33 @@
 	
 <body background="images/black.jpg">
 
-	<br>
-		<button class="btn btn-danger><font color="#000"><b>Back</b></font></button>
-	<br>			
+		<button class="btn btn-danger><font color="#000"><b><a href="index.php">Back</a></b></font></button>
+	<br><br>			
 					
 	           <center>
 				<button class="btn" style="width:170px;"><font color="#000"><b>Customers</b></font></button>
-				
+			<br>	<br>
 		<?php include('config1.php'); ?>
 		
 		<div class="mainbox">
 			<br>
 					
-					<?php $revenues = mysql_query("SELECT * FROM revenues") or die(mysql_error());  ?>
+					<?php $revenues = pg_query("SELECT * FROM revenues") or die(pg_error());  ?>
 					<?php
 			  
-						$sql2 = mysql_query("SELECT id FROM revenues");
+						$sql2 = pg_query("SELECT id FROM revenues");
 							if (isset($_GET['id'])) {
 								$id = $_GET['id'];
 								$sql2 = "DELETE FROM revenues WHERE id = '$id'";
-									if (@mysql_query($sql2)) {
+									if (@pg_query($sql2)) {
 		
 									} else {
 		
 								}
 								}
 		
-						$sql = mysql_query("SELECT customer FROM revenues ORDER BY id ASC");
-						while($row = mysql_fetch_array($revenues)){ 
+						$sql = pg_query("SELECT customer FROM revenues ORDER BY id ASC");
+						while($row = pg_fetch_array($revenues)){ 
 					
 								echo $row['customer'];	
 								echo '<br>';

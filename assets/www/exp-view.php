@@ -28,7 +28,7 @@
 	
 <body background="images/black.jpg">
 
-		<button class="btn btn-danger><font color="#000"><b>Back</b></font></button>
+		<button class="btn btn-danger><font color="#000"><b><a href="index.php">Back</a></b></font></button>
 	<br><br>			
 					
 	           <center>
@@ -39,7 +39,7 @@
 		<div class="mainbox">
 			<br>
 					
-					<?php $revenues = pg_query("SELECT * FROM revenues") or die(pg_error());  ?>
+					<?php $revenues = pg_query("SELECT * FROM expenses") or die(pg_error());  ?>
 					<?php
 			  
 						$sql2 = pg_query("SELECT id FROM revenues");
