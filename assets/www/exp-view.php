@@ -39,7 +39,7 @@
 		<div class="mainbox">
 			<br>
 					
-					<?php $revenues = pg_query("SELECT * FROM revenues") or die(pg_error());  ?>
+					<?php $revenues = pg_query("SELECT * FROM expenses") or die(pg_error());  ?>
 					<?php
 			  
 						$sql2 = pg_query("SELECT id FROM revenues");
@@ -53,10 +53,10 @@
 								}
 								}
 		
-						$sql = pg_query("SELECT customer FROM revenues ORDER BY id ASC");
+						$sql = pg_query("SELECT expense FROM expenses ORDER BY id ASC");
 						while($row = pg_fetch_array($revenues)){ 
 					
-								echo $row['customer'];	
+								echo $row['Expenses'];	
 								echo '<br>';
 									
 									
