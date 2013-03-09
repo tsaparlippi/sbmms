@@ -1,14 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-	<link href="css/index.css" media="screen" rel="stylesheet" type="text/css" />
-
-	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
-		
-	<link rel='stylesheet' href='css/black-tie/jquery-ui-1.8.24.custom.css' />
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script> 
 	
 	<script type='text/javascript' src='js/jquery-1.8.2.min.js' ></script>
 	<script type='text/javascript' src='js/jquery-ui-1.8.24.custom.min.js' ></script>
@@ -25,43 +21,84 @@
       })
     })
 	</script>
+	<style type="text/css" title="currentStyle">
+		
+			@import "css/demo_table_jui.css";
+			@import "js/smoothness/jquery-ui-1.8.4.custom.css";
+		</style>
+		
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 	
-<body background="images/black.jpg">
+	<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				oTable = $('#example').dataTable({
+					"bJQueryUI": true,
+					"sPaginationType": "full_numbers"
+				});
+			} );
+		</script>
+<body>
 
-		<button class="btn btn-danger><font color="#000"><b><a href="index.php">Back</a></b></font></button>
-	<br><br>			
-					
-	           <center>
-				<button class="btn" style="width:170px;"><font color="#000"><b>Customers</b></font></button>
-			<br>	<br>
+
+
+		&nbsp;&nbsp;<a href="index.php"><button class="btn" style="width:200px;"><font color="#000"><b>Back</b></font></button></a><br>
+	
+		
+		</div>
+		
 		<?php include('config1.php'); ?>
 		
-		<div class="mainbox">
-			<br>
+		<center>
+				
+				<div id="dt_example" style="width: 860px;">
+				<div id="container" style="width: 8">
+				<div class="demo_jui" style="width: 860px;">
+				
+				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="width: 860px;">
+
+					<thead>
+						<tr>
+							<th style="width:100px;">Date</th>
+							<th style="width: 70px;">Amount</th>
+			
+			
+						</tr>
+					</thead>
 					
-					<?php $revenues = pg_query("SELECT * FROM expenses") or die(pg_error());  ?>
+					<tbody>
+					<?php $expenses = mysql_query("SELECT * FROM expenses") or die(mysql_error());  ?>
 					<?php
 			  
-						$sql2 = pg_query("SELECT id FROM revenues");
+						$sql2 = mysql_query("SELECT id FROM expenses");
 							if (isset($_GET['id'])) {
 								$id = $_GET['id'];
-								$sql2 = "DELETE FROM revenues WHERE id = '$id'";
-									if (@pg_query($sql2)) {
+								$sql2 = "DELETE FROM expenses WHERE id = '$id'";
+									if (@mysql_query($sql2)) {
 		
 									} else {
 		
 								}
 								}
 		
-						$sql = pg_query("SELECT expense FROM expenses ORDER BY id ASC");
-						while($row = pg_fetch_array($revenues)){ 
+						$sql = mysql_query("SELECT * FROM expenses ORDER BY id ASC");
+						while($row = mysql_fetch_array($expenses)){ 
 					
-								echo $row['Expenses'];	
-								echo '<br>';
+								echo '<tr>';
+									echo '<td>'.$row['date'].'</td>';
+									echo '<td>'.$row['cost'].'</td>';
+								echo '<td>';
 									
-									
+									echo'<a rel="facebox" href=editrev.php?id=' .$row['id'] . '>' . 'Edit' . '</a>&nbsp;';
+									echo '|';
+									echo'&nbsp;<a rel="facebox" href=viewrev.php?id=' . $row['id'] . '>' . 'View' . '</a>&nbsp;';
+									echo '';
+							
+								 echo '</tr> ';
+							
 								  }
 			?>
+			</tbody>
+			</table>
 			
 			</div></div></div>
 			
