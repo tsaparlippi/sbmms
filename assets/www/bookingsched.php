@@ -1,15 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-	<link href="css/index.css" media="screen" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
 
-	<link href="bootstrap/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="bootstrap/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="bootstrap/css/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="bootstrap/css/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
-	<link href="css/slide.css" media="screen" rel="stylesheet" type="text/css" />
-	
-	<link rel='stylesheet' href='css/black-tie/jquery-ui-1.8.24.custom.css' />
 	
 	<script type='text/javascript' src='js/jquery-1.8.2.min.js' ></script>
 	<script type='text/javascript' src='js/jquery-ui-1.8.24.custom.min.js' ></script>
@@ -75,20 +71,11 @@
 		</script>
 		
 <body background="images/black.jpg">
-	
-	<div class="leftlogo">
-	<img src="images/logo.png">
-	</div>
 
-	<center>
-	
-		<div class="menu-name">
-		<img src="images/booksched.png">
 		
 		<div class="summary-buttons1">
-		<a href="calendar.php"><button class="btn">Calendar</button></a> &nbsp;&nbsp;<font size="3" color="#f66300"><b>|</b></font>&nbsp;&nbsp; 
-		<a href="event-list.php"><button class="btn btn-info">Event Lists</button></a>  &nbsp;&nbsp;<font size="3" color="#f66300"><b>|</b></font>&nbsp;&nbsp; 
-		<a href="add-event.php"><button class="btn btn-danger">Add Event</button></a>
+		
+		<a href="event-list.php"><button class="btn btn-info">Event Lists</button></a>  &nbsp;&nbsp;<font size="3" color="#f66300"></font> 
 		</div>
 	
 		</div>
@@ -97,23 +84,7 @@
 		
 	</center>
 	
-		<div class="menubox">
-		<br><br><br><br><br><br>
-		<br><br><br><br><br>
-		
-		&nbsp;&nbsp;<a href="index.php"><button class="btn btn-warning" style="width:200px;"><font color="#000"><b>Home</b></font></button></a><br>
-		&nbsp;&nbsp;<a href="rev-view.php"><button class="btn btn-warning" style="width:200px;"><font color="#000"><b>Revenues</b></font></button></a><br>
-		&nbsp;&nbsp;<a href="exp-view.php"><button class="btn btn-warning" style="width:200px;"><font color="#000"><b>Expenses</b></font></button></a><br>
-		&nbsp;&nbsp;<a href="summary-rev.php"><button class="btn btn-warning" style="width:200px;"><font color="#000"><b>Summary</b></font></button></a><br>
-		&nbsp;&nbsp;<button class="btn btn-warning" style="width:200px;"><font color="#000"><b>File Management</b></font></button><br>
-		&nbsp;&nbsp;<a href="bookingsched.php"><button class="btn" style="width:200px;"><font color="#000"><b>Booking Schedule</b></font></button></a><br>
-		&nbsp;&nbsp;<button class="btn btn-warning" style="width:200px;"><font color="#000"><b>Customer's Database</b></font></button>
-		
-		</div>
-		
-		<div class="mainbox"><br>
-		<div class="content">
-		<div class="actions"style="padding-top:0px;">
+	
 
 		<div id="wrap">
 
