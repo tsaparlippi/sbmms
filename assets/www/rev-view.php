@@ -1,3 +1,12 @@
+<?php
+$con = mysql_connect("localhost", "root", "");
+if (!$con) {
+    die("Error: " . mysql_error());
+}
+mysql_select_db("sbms", $con);
+$result = mysql_query("SELECT * FROM revenues");
+?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -6,8 +15,6 @@
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script> 
 	
-	<script type='text/javascript' src='js/jquery-1.8.2.min.js' ></script>
-	<script type='text/javascript' src='js/jquery-ui-1.8.24.custom.min.js' ></script>
 	
 	<script src="lib/jquery.js" type="text/javascript"></script>
 	<script src="facebox/facebox.js" type="text/javascript"></script>
@@ -37,86 +44,53 @@
 				});
 			} );
 		</script>
-<body>
-
-	<center>
-	
-
-	
-		
-		
-		
-		</div>
-	
-		</div>
-		
-		
-	</center>
-	
-
-		&nbsp;&nbsp;<a href="index.php"><button class="btn" style="width:200px;"><font color="#000"><b>Back</b></font></button></a><br>
-	
-		
-		</div>
-		
-		<?php include('config1.php'); ?>
-		
-		<center>
-				
-				<div id="dt_example" style="width: 860px;">
-				<div id="container" style="width: 8">
-				<div class="demo_jui" style="width: 860px;">
-				
-				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="width: 860px;">
-
-					<thead>
-						<tr>
-							<th style="width:100px;">Date</th>
-							<th style="width: 70px;">Amount</th>
-			
-			
-						</tr>
-					</thead>
-					
-					<tbody>
-					<?php $revenues = mysql_query("SELECT * FROM revenues") or die(mysql_error());  ?>
-					<?php
-			  
-						$sql2 = mysql_query("SELECT id FROM revenues");
-							if (isset($_GET['id'])) {
-								$id = $_GET['id'];
-								$sql2 = "DELETE FROM revenues WHERE id = '$id'";
-									if (@mysql_query($sql2)) {
-		
-									} else {
-		
-								}
-								}
-		
-						$sql = mysql_query("SELECT * FROM revenues ORDER BY id ASC");
-						while($row = mysql_fetch_array($revenues)){ 
-					
-								echo '<tr>';
-									echo '<td>'.$row['date'].'</td>';
-									echo '<td>'.$row['cost'].'</td>';
-								echo '<td>';
-									
-									echo'<a rel="facebox" href=editrev.php?id=' .$row['id'] . '>' . 'Edit' . '</a>&nbsp;';
-									echo '|';
-									echo'&nbsp;<a rel="facebox" href=viewrev.php?id=' . $row['id'] . '>' . 'View' . '</a>&nbsp;';
-									echo '';
-							
-								 echo '</tr> ';
-							
-								  }
-			?>
-			</tbody>
-			</table>
-			
-			</div></div></div>
-			
-		</div>
-		</div>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script src="media/js/jquery.js" type="text/javascript"></script>
+        <script src="media/js/jquery.dataTables.js" type="text/javascript"></script>
+        <style type="text/css">
+            @import "media/css/demo_table_jui.css";
+            @import "media/themes/smoothness/jquery-ui-1.8.4.custom.css";
+        </style>
+        <style>
+            *{
+                font-family: arial;
+            }
+        </style>
+        <script type="text/javascript" charset="utf-8">
+            $(document).ready(function(){
+                $('#datatables').dataTable({
+                    "sPaginationType":"full_numbers",
+                    "aaSorting":[[2, "desc"]],
+                    "bJQueryUI":true
+                });
+            })
+        </script>
+    </head>
+    <body>
+        <div>
+            <table id="datatables" class="display">
+                <thead>
+                    <tr>
+                        <th>Event</th>
+                        <th>Amount</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    while ($row = mysql_fetch_array($result)) {
+                        ?>
+                        <tr>
+                            <td><?=$row['event']?></td>
+                            <td><?=$row['cost']?></td>
+                          
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                </tbody>
+            </table>
+        </div>
 				
 </body>
 </html>
