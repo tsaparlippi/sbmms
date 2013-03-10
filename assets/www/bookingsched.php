@@ -39,8 +39,8 @@
 		
 		<style type="text/css">
 	        #calendar {
-                width:700px;
-                margin: 30px auto;	        
+                width:300px;
+                margin: 10px auto;	        
             }
 	    </style>
  
@@ -75,7 +75,8 @@
 		
 		<div class="summary-buttons1">
 		
-		<a href="event-list.php"><button class="btn btn-info">Event Lists</button></a>  &nbsp;&nbsp;<font size="3" color="#f66300"></font> 
+		<center><a href="event-list.php"><button class="btn btn-info">Event Lists</button></a><font size="3" color="#f66300"></font> 
+		<a href="add-event.php"><button class="btn btn-danger">Add Event</button></a>
 		</div>
 	
 		</div>
