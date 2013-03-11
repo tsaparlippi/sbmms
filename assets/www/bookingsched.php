@@ -75,8 +75,8 @@
 		
 		<div class="summary-buttons1">
 		
-		<center><a href="event-list.php"><button class="btn btn-info">Event Lists</button></a><font size="3" color="#f66300"></font> 
-		<a href="add-event.php"><button class="btn btn-danger">Add Event</button></a>
+	
+		<a href="add_schedule.php"><button class="btn btn-danger">Add Event</button></a>
 		</div>
 	
 		</div>
