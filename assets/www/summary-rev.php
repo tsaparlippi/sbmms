@@ -21,40 +21,7 @@
 		<?php if($_SESSION['user_type'] != 'User'){ ?>
 		
 		<?php } ?>
-		<form>
-<fieldset data-role="controlgroup" data-type="horizontal">
-    <select name="month" id="month">
-        <option value="1">January</option>
-		<option value="2">February</option>
-		<option value="3">March</option>
-		<option value="4">April</option>
-		<option value="5">May</option>
-		<option value="6">June</option>
-		<option value="7">July</option>
-		<option value="8">August</option>
-		<option value="9">September</option>
-		<option value="10">October</option>
-		<option value="11">November</option>
-		<option value="12">December</option>
-   </select>
-    <select name="year" id="year">
-		<option value="2010">2010</option>
-		<option value="2011">2011</option>
-		<option value="2012">2012</option>
-		<option value="2013">2013</option>
-		<option value="2013">2014</option>
-		<option value="2014">2014</option>
-		<option value="2015">2015</option>
-		<option value="2015">2016</option>
-		<option value="2015">2017</option>
-		<option value="2015">2018</option>
-		<option value="2015">2019</option>
-		<option value="2015">2020</option>
-    </select>
-</fieldset>
-		<input type="submit" name="submit" value="Proceed" class="btn btn-inverse"/>
-		</form>
-		</div>
+
 		
 		<center>
 		
@@ -62,34 +29,28 @@
 				<div id="container" style="width: 8">
 				<div class="demo_jui" style="width: 860px;">
 		
-			<table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="width: 460px;">
-			<thead>
-		<tr>
-			<th style="width:100px;">Date</th>
-			<th>Event</th>
-			<th>Customer</th>
-			<th>Amount</th>
-			
-		</tr>
-	</thead>
 	<tbody>
-			<?php $rev = mysql_query("SELECT * FROM revenues") or die(mysql_error());  ?>
+			<?php $rev = mysql_query("SELECT SUM(cost) as totalcost FROM revenues") or die(mysql_error());  ?>
 			<?php WHILE($revs = mysql_fetch_array($rev)){
-				$id = $revs['exp_id'];
-				$control = $revs['exp_id'];
-				$customer= $revs['customer'];
-				$date = $revs['date'];
-				$event= $revs['event'];
-				$cost = $revs['cost'];
-				
+				$totalcost = $revs['totalcost']; }?>
+			
+			<?php $exp = mysql_query("SELECT SUM(cost2) as totalexp FROM expenses") or die(mysql_error()); ?>
+			<?php WHILE($exps = mysql_fetch_array($exp)){
+				$totalexp = $exps['totalexp']; }
 				?>
+
 			<tr class="gradeA del<?php echo $id;?>">
 			<form action="editrev.php" method="POST">
-				
-				<td align="center"><?php echo $date; ?></td>
-				<td align="center"><?php echo $event; ?></td>
-				<td align="center"><?php echo $customer; ?></td>
-				<td align="right"><?php echo $cost; ?></td>
+			<br/><br/><br/>
+			<center>
+	<div class="ui-grid-a ui-responsive">
+    <div class="ui-block-a"><div class="ui-body ui-body-d" style="height:60px"><font size="5px" align="center">Total Revenues</font></div></div>
+    <div class="ui-block-b"><div class="ui-body ui-body-d" style="height:60px"><font size="5px" align="center"><?php echo $totalcost; ?></font></div></div>
+    <div class="ui-block-a"><div class="ui-body ui-body-d" style="height:60px"><font size="5px" align="center">Total Expenses</font></div></div>
+    <div class="ui-block-b"><div class="ui-body ui-body-d" style="height:60px"><font size="5px" align="center"><?php echo $totalexp; ?></font></div></div>
+    <div class="ui-block-a"><div class="ui-body ui-body-d" style="height:60px"><font size="5px" align="center">Income</font></div></div>
+    <div class="ui-block-b"><div class="ui-body ui-body-d" style="height:60px"><font size="5px" align="center"><?php echo $totalcost-$totalexp; ?></font></div></div>
+	</div>	</center>
 				
 				<!-- hide actions for user access level-->
 				<?php if($_SESSION['user_type'] != 'User'){ ?>
@@ -101,9 +62,7 @@
 				</td>
 				
 				</tr>
-			<?php } ?>
 	</tbody>
-</table>
 
 </center>
 		
