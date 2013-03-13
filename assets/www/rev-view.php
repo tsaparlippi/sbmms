@@ -1,20 +1,5 @@
-<<<<<<< HEAD
-<?php
-$con = pg_connect("localhost", "root", "");
-if (!$con) {
-    die("Error: " . pg_error());
-}
-pg_select_db("yee", $con);
-$result = pg_query("SELECT * FROM revenues");
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
-=======
 <!DOCTYPE html> 
 <html> 
->>>>>>> view revenues
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
 	<link rel="stylesheet" href="/tableview-master/css/latest.css" />
@@ -33,6 +18,22 @@ $result = pg_query("SELECT * FROM revenues");
       })
     })
 	</script>
+	
+	<style type="text/css" title="currentStyle">
+		
+			@import "css/demo_table_jui.css";
+		</style>
+		
+	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+			$(document).ready(function() {
+				oTable = $('#example').dataTable({
+					"bJQueryUI": true,
+					"sPaginationType": "full_numbers"
+				});
+			} );
+		</script>
 
 <body>
 
@@ -54,16 +55,18 @@ $result = pg_query("SELECT * FROM revenues");
 		
 				<center>
 				
-				<table cellspacing="0" class="ui-responsive table-stroke" data-role="table" id="sample" data-mode="columntoggle" data-top-container="true" data-bottom-container="true" data-inset="true" data-filter="true">
-         <thead>
-           <tr class="ui-bar-d">
-			 <th data-priority="2">Event</th> &nbsp;&nbsp;
-             <th data-priority="3">Cost</th>
-             </tr>
-         </thead>
-     
-          
-							
+				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+
+					<thead>
+						<tr>
+							<th style="width:85px;">Date</th>
+							<th style="width:85px;">Event</th>
+							<th style="width:120px;">Customer</th>
+							<th style="width: 70px;">Amount</th>
+						
+						</tr>
+					</thead>
+					
 					<tbody>
 					<?php $revenues = mysql_query("SELECT * FROM revenues") or die(mysql_error());  ?>
 					<?php
@@ -83,15 +86,16 @@ $result = pg_query("SELECT * FROM revenues");
 						while($row = mysql_fetch_array($revenues)){ 
 					
 								echo '<tr>';
+									echo '<td>'.$row['date'].'</td>';
 									echo '<td>'.$row['event'].'</td>';
+									echo '<td>'.$row['customer'].'</td>';
 									echo '<td>'.$row['cost'].'</td>';
-								echo '<td>';
-								echo '</tr> ';
+								 echo '</tr> ';
 							
 								  }
 			?>
 			</tbody>
- 			</table>
+			</table>
 			
 			</div></div></div>
 			
