@@ -62,7 +62,7 @@
 							<?php
 								include("config1.php");
 							
-								$revenues = mysql_query("SELECT * FROM guest WHERE Payment != '$Inquiry'") ?>
+								$revenues = mysql_query("SELECT * FROM guest WHERE Amount != '0'") ?>
 					
 							<?php
 			  
@@ -80,11 +80,11 @@
 									}
 								}
 		
-								$db = mysql_query("SELECT * FROM revenues ORDER BY Guest_id ASC WHERE Payment != '$Inquiry'");
+								$db = mysql_query("SELECT * FROM revenues ORDER BY Guest_id ASC ");
 									while($row = mysql_fetch_array($revenues)){ 
 					
 										echo '<tr>';
-											echo '<td>'.$row['date'].'</td>';
+											echo '<td>'.$row['TDate'].'</td>';
 											echo '<td>'.$row['Company'].'</td>';
 											echo '<td>'.$row['Name'].'</td>';
 											echo '<td align="right">'.$row['Amount'].'</td>';
