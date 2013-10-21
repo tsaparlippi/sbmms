@@ -3,10 +3,10 @@ session_start();
 
 include('config1.php');
 $userid = $_POST['userid'];
-$name=$_POST['name'];
-$contactnumber=$_POST['contactnumber'];
+$Name=$_POST['Name'];
+$Contact_no=$_POST['Contact_no'];
 
-mysql_query("UPDATE customerdatabase SET name='$name', contactnumber='$contactnumber' WHERE id='$userid'");
+mysql_query("UPDATE guest SET Name='$Name', Contact_no='$Contact_no' WHERE Guest_id='$userid'");
 header("location: cus-view.php");
 mysql_close($con);
 ?> 

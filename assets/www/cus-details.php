@@ -41,19 +41,19 @@
 				echo $Contact_no;
 				echo '<br><br>';
                 echo '<td>' . 'Booked Events: ' . '</td>';
-				$resultA = mysql_query("SELECT * from guest WHERE Name='$Name'");
+				$resultA = mysql_query("SELECT * from guest WHERE Guest_id='$Guest_id'");
 								
 				
 			while($rowA = mysql_fetch_array($resultA)) {
 									$Company= $rowA['Company'];
 									$TDate = $rowA['TDate'];
-									$Venue = $rowA['Venue'];
-									$Status = $rowA['Status'];
+									$venue = $rowA['venue'];
+								
 									echo "<div data-role='content'>
 														
 														<div  data-role='collapsible-set'data-iconpos='right' >
 														<div data-role='collapsible' data-theme='b' data-content-theme='a'  data-collapsed-icon='arrow-d'   data-expanded-icon='arrow-u'style='margin-bottom:-20px; margin-top: -20px; '>
-														<h2> $Comapny</h2>
+														<h2> $Company</h2>
 														$TDate</br>$venue</br>$Status
 														</div>
 														</div></div>";

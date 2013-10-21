@@ -56,7 +56,7 @@
 	<div data-role="header" data-position="inline">
 			<a href="index.php" data-icon="arrow-l">Back</a>
 			<h1>Customer's Database</h1>
-			<a href="cus-add1.php" data-role="button" data-theme="a" data-icon="plusthick"  data-inline="true">New</a>
+			
 		</div>
 		
 		
@@ -102,7 +102,7 @@
 							echo '<td>';
 							echo'<a href="cus-details.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop"">' . 'View' . '</a>';
 							echo'|';
-							echo'<a href="editcus.php?Guest_id=' .$row['id'] . ' data-rel="dialog" data-transition="pop">' . 'Edit' . '</a>';
+							echo'<a href="editcus.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop">' . 'Edit' . '</a>';
 								
 									echo '</td>';
 									

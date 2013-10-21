@@ -39,7 +39,7 @@
 
 <?php
 	
-	if (isset($_GET['id']))
+	if (isset($_GET['Guest_id']))
 	
 	{
 	
@@ -49,19 +49,19 @@
 	
 			include('config1.php');
 		
-			$id=(int)$_GET['id'];
+			$Guest_id=(int)$_GET['Guest_id'];
 	
-			$result = mysql_query("SELECT * FROM customerdatabase WHERE id = $id");
+			$result = mysql_query("SELECT * FROM guest WHERE Guest_id = $Guest_id");
 
 			while($row = mysql_fetch_array($result))
 			
   			{
 			
-				echo '<input type="hidden" name="userid" value="'. $row['id'] .'">'; 	
+				echo '<input type="hidden" name="userid" value="'. $row['Guest_id'] .'">'; 	
 					
-				echo '<input type="text" name="name"  placeholder="Name" value="'. $row['name'] .'">';
+				echo '<input type="text" name="Name"  placeholder="Name" value="'. $row['Name'] .'">';
            
-				echo '<input type="text" placeholder="Contanct Number" onkeypress="return isNumberKey(event)" name="contactnumber" value="'. $row['contactnumber'] .'">';
+				echo '<input type="text" placeholder="Contact Number" maxlength="11" onkeypress="return isNumberKey(event)" name="Contact_no" value="'. $row['Contact_no'] .'">';
              
 				echo '<td><input name="Input" type="submit" value="Save" data-theme="a" /></td>';
 			}
