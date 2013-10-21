@@ -34,10 +34,10 @@
 
 .smoothcalendar .dayNames {
     display : block;
-    text-transform: uppercase;
-    font-size : 8pt;
+ 
+    font-size : 11pt;
     color : #000;
-    padding: 15px 7px 7px 8px;
+    padding: 15px 7px 7px 0px;
 }
 
 .smoothcalendar a {
@@ -51,7 +51,7 @@
     font-size: 10pt;
     font-weight: bold;
     line-height: 2.3em;
-    color : #18191D;
+    color : white;
 }
 
 .current_date_IE6 {
@@ -63,7 +63,7 @@
 .days_of_the_week div{
     text-transform: uppercase;
     padding: 10px 0px;
-    font-size: 75%; 
+    font-size: 85%; 
     color: #18191D;
     padding: 4px;
 }
@@ -101,17 +101,14 @@
 
 .day_number {
     color: #FFF;
-    font-size: 10pt;
+    font-size: 17pt;
     width : 100%;
-	
 }
 
 .day_event_count {
-    padding-top : 5px;
-    font-size: 8pt;
-    text-align: right;
+    padding-top : 20px;
+    font-size: 0pt;
     color : #FFF;
-    width : 100%;
 }
 
 .events_list_box {
@@ -123,7 +120,7 @@
 }
 
 .smoothcalendar #eventListContainer {
-    margin-top : 5px;
+    margin-top : 10px;
     overflow: hidden;
     position : relative;
     top : 0px;
@@ -134,7 +131,7 @@
     overflow: hidden;
     position : relative;
     top : 0px;
-    font-size: 5pt;
+    font-size: 9pt;
 }
 
 .smoothcalendar_listItem {
@@ -161,7 +158,7 @@
 
 .smoothcalendar #fullDateText, .smoothcalendar h2 {
     margin-bottom: 2px;
-    font-size: 8pt;
+    font-size: 13pt;
     font-weight: normal;
     color : yellow;
 }
@@ -169,7 +166,7 @@
 .smoothcalendar #fullDateText {
     text-transform: uppercase;
     margin-bottom: 20px;
-    font-size: 90%;
+    font-size: 140%;
     color : #318DF2;
 }
 
@@ -185,7 +182,7 @@
 }
 
 .smoothcalendar #smoothcalendarclose {
-    font-size : 12pt;
+    font-size : 25pt;
     text-decoration: none;
     right : 0px;
     top : 0px;
@@ -197,7 +194,7 @@
 
 .smoothcalendar #previousMonth, .smoothcalendar #nextMonth, .smoothcalendar #nextYear, .smoothcalendar #previousYear {
     background-repeat: no-repeat;
-    font-size: 10pt;
+    font-size: 18pt;
     position: relative;
     display: inline-block;
     overflow : hidden;
