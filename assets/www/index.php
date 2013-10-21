@@ -35,7 +35,6 @@
 					<li><a href="rev-view.php">Revenues</a></li>
 					<li><a href="exp-view.php">Expenses</a></li>
 					<li><a href="summary.php">Summary</a></li>
-					<li><a href="bookingsched.php" rel="external">Booking Schedule</a></li>
 					<li><a href="res-view.php">Event's Schedule</a></li>
 					<li><a href="reservation.php" rel="external">Reservation</a></li>
 					<li><a href="cus-view.php">Customer's Database</a></li>
