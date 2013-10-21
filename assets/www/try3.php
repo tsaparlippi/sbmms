@@ -24,6 +24,7 @@ include('include/mysql_connect.php');
       $check=$_POST['multi'];
       $sta=$_POST['sta'];
 	  $en=$_POST['en'];
+	  $TDate=$_POST['TDate'];
 	  $name=$_POST['name'];
 	  $Company=$_POST['Company'];
 	  $Address=$_POST['Address'];
@@ -56,9 +57,9 @@ else{
 
    $s=$_POST['start'];
    $e=$_POST['end'];
-        mysql_query("INSERT INTO guest ( Name, Company, Address, Contact_no, Payment, Amount, Status, Quantity_reserve	,Nights)
+        mysql_query("INSERT INTO guest ( TDate, Name, Company, Address, Contact_no, Payment, Amount, Status, Quantity_reserve	,Nights)
                      VALUES
-                    ('$name','$Company','$Address','$Contact_no', '$Payment', '$Amount', '$status','$N','$haha')");
+                    ('$TDate', '$name','$Company','$Address','$Contact_no', '$Payment', '$Amount', '$status','$N','$haha')");
 					
 					$reg=mysql_insert_id();//Getting the next autoincrement of Guest_id in table guest 
    
