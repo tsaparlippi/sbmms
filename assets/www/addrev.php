@@ -51,7 +51,7 @@
 	</div>
 
 <div data-role="fieldcontain">
-<select name="Comapny" id="eCompany" required="required">
+<select name="Company" id="Company" required="required">
 	<option value=""> Choose event</option>
 	<option >Acquaintance Party
 	<option>Anniversary
