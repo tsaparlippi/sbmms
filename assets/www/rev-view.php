@@ -35,7 +35,7 @@
 		<div data-role="header" data-position="inline">
 			<a href="index.php" data-icon="arrow-l" rel="external">Back</a>
 			<h1>Revenues</h1>
-			<a href="addrev"  data-role="button" data-theme="a" data-icon="plusthick"  data-inline="true" rel="external">Add</a>
+			<a href="addrev.php"  data-role="button" data-theme="a" data-icon="plusthick"  data-inline="true" rel="external">Add</a>
 		</div>
 			
 		
@@ -62,16 +62,16 @@
 							<?php
 								include("config1.php");
 							
-								$revenues = mysql_query("SELECT * FROM revenues") ?>
+								$revenues = mysql_query("SELECT * FROM guest") ?>
 					
 							<?php
 			  
-								$db2 = mysql_query("SELECT id FROM revenues");
+								$db2 = mysql_query("SELECT Guest_id FROM guest");
 							
-									if (isset($_GET['id'])) {
-										$id = $_GET['id'];
+									if (isset($_GET['Guest_id'])) {
+										$Guest_id = $_GET['Guest_id'];
 								
-									$db2 = "DELETE FROM revenues WHERE id = '$id'";
+									$db2 = "DELETE FROM revenues WHERE Guest_id = '$Guest_id'";
 									
 										if (@mysql_query($db2)) {
 		
@@ -80,14 +80,14 @@
 									}
 								}
 		
-								$db = mysql_query("SELECT * FROM revenues ORDER BY id ASC");
+								$db = mysql_query("SELECT * FROM revenues ORDER BY Guest_id ASC");
 									while($row = mysql_fetch_array($revenues)){ 
 					
 										echo '<tr>';
 											echo '<td>'.$row['date'].'</td>';
-											echo '<td>'.$row['event'].'</td>';
-											echo '<td>'.$row['customer'].'</td>';
-											echo '<td align="right">'.$row['cost'].'</td>';
+											echo '<td>'.$row['Company'].'</td>';
+											echo '<td>'.$row['Name'].'</td>';
+											echo '<td align="right">'.$row['Amount'].'</td>';
 										echo '</tr> ';
 							
 								}
