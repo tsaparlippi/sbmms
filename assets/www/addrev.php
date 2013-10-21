@@ -94,12 +94,12 @@
 	</select></div>
 	
 	<div data-role="fieldcontain">
-	<select name="status" id="status" required="required">
-	<option value=""> Status</option>
-	<option>Fully Paid
-	<option>Initial Deposit
-	<option>Inquiry
-	</select></div>
+	<select name="Payment" placeholder="Payment" id="Payment" required="required">
+				<option required title="*Please Enter Status" class="sf"  value=""> Choose status</option>
+				<option value="Full Payment">Full Payment </option>
+				<option value="Initial Payment">Initial Payment </option>
+				<option value="Inquiry">Inquiry </option>			
+			</select><br></div>
 	
 	<div class="field"><input id="save"  type="submit" name="SubmitOne" data-role="button" data-theme="b" value="Save event" class="submit"></div>
 	</div>
