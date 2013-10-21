@@ -7,12 +7,18 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
 </head> 
-		<body background="images/black.jpg" align="center">		
+		<div data-role="page" class="type-home" 
+			style="background-image: url('images/bg.jpg'); 
+					background-attachment: fixed; 
+					background-repeat: repeat; 
+					background-size: 100% 100%;">
+					<div data-role="header" data-position="inline">
+				<a href="index.php" data-icon="arrow-l">Back</a>
+				<h1>Summary</h1>
+				
+			</div>
 
-		<div data-role="page" id="home">
-<div data-role="header">
-<h1>Summary</h1>
-</div>
+
 <?php 
 include('config1.php'); 
 
