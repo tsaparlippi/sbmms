@@ -1,0 +1,163 @@
+@charset "utf-8";
+/* CSS Document */
+
+#fancybox-wrap  { 
+
+ /* top: 10px !important; 
+*/  
+} 
+#filter{ width:300px; height:25px; font-size:12px; text-indent:10px;
+ border-top:1px solid; border-top-color:#CCC;
+ border-left:1px solid; border-left-color:#CCC;
+ border-right:1px solid; border-right-color:#CCC;
+ border-bottom:1px solid; border-bottom-color:#CCC;
+
+     -webkit-border-top-left-radius: 5px;-webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-top-right-radius: 5px;-webkit-border-bottom-right-radius: 5px;
+     -moz-box-shadow: 0px 0px 1px #999;
+     -webkit-box-shadow: 0px 0px 1px ##999;
+      box-shadow: 0px 0px 1px ##999;
+}
+#filter:hover{ width:300px; height:25px; font-size:12px; text-indent:10px;
+ border-top:1px solid; border-top-color:#999;
+ border-left:1px solid; border-left-color:#CCC;
+ border-right:1px solid; border-right-color:#CCC;
+ border-bottom:1px solid; border-bottom-color:#CCC;
+
+     -webkit-border-top-left-radius: 5px;-webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-top-right-radius: 5px;-webkit-border-bottom-right-radius: 5px;
+     -moz-box-shadow: 0px 0px 1px #999;
+     -webkit-box-shadow: 0px 0px 1px ##999;
+      box-shadow: 0px 0px 1px ##999;
+}
+#n{ height:30px;}
+#hvr{ caption-side:top30px }
+#googleeffect *:focus {
+ 
+ width:600px;
+  
+  outline: none;
+ border: 1px solid #090;
+ 
+ 
+  
+  
+}::-webkit-input-placeholder {
+    color:#666;
+}
+
+:-moz-placeholder {  
+    color:#666;  
+}
+
+
+#fancybox-wrap  { 
+
+ /* top: 10px !important; 
+*/  
+} 
+#filter{ width:300px; height:25px; font-size:12px; text-indent:10px;
+ border-top:1px solid; border-top-color:#CCC;
+ border-left:1px solid; border-left-color:#CCC;
+ border-right:1px solid; border-right-color:#CCC;
+ border-bottom:1px solid; border-bottom-color:#CCC;
+
+     -webkit-border-top-left-radius: 5px;-webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-top-right-radius: 5px;-webkit-border-bottom-right-radius: 5px;
+     -moz-box-shadow: 0px 0px 1px #999;
+     -webkit-box-shadow: 0px 0px 1px ##999;
+      box-shadow: 0px 0px 1px ##999;
+}
+#filter:hover{ width:300px; height:25px; font-size:12px; text-indent:10px;
+ border-top:1px solid; border-top-color:#999;
+ border-left:1px solid; border-left-color:#CCC;
+ border-right:1px solid; border-right-color:#CCC;
+ border-bottom:1px solid; border-bottom-color:#CCC;
+
+     -webkit-border-top-left-radius: 5px;-webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-top-right-radius: 5px;-webkit-border-bottom-right-radius: 5px;
+     -moz-box-shadow: 0px 0px 1px #999;
+     -webkit-box-shadow: 0px 0px 1px ##999;
+      box-shadow: 0px 0px 1px ##999;
+}
+#n{ height:30px;}
+#hvr{ caption-side:top30px }
+#googleeffect *:focus {
+ 
+ width:600px;
+  
+  outline: none;
+ border: 1px solid #090;
+ 
+ 
+  
+  
+}::-webkit-input-placeholder {
+    color:#666;
+}
+
+:-moz-placeholder {  
+    color:#666;  
+}
+
+#fancybox-wrap  { 
+
+ /* top: 10px !important; 
+*/  
+} 
+#filter{ width:300px; height:25px; font-size:12px; text-indent:10px;
+ border-top:1px solid; border-top-color:#CCC;
+ border-left:1px solid; border-left-color:#CCC;
+ border-right:1px solid; border-right-color:#CCC;
+ border-bottom:1px solid; border-bottom-color:#CCC;
+
+     -webkit-border-top-left-radius: 5px;-webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-top-right-radius: 5px;-webkit-border-bottom-right-radius: 5px;
+     -moz-box-shadow: 0px 0px 1px #999;
+     -webkit-box-shadow: 0px 0px 1px ##999;
+      box-shadow: 0px 0px 1px ##999;
+}
+#filter:hover{ width:300px; height:25px; font-size:12px; text-indent:10px;
+ border-top:1px solid; border-top-color:#999;
+ border-left:1px solid; border-left-color:#CCC;
+ border-right:1px solid; border-right-color:#CCC;
+ border-bottom:1px solid; border-bottom-color:#CCC;
+
+     -webkit-border-top-left-radius: 5px;-webkit-border-bottom-left-radius: 5px;
+	 -webkit-border-top-right-radius: 5px;-webkit-border-bottom-right-radius: 5px;
+     -moz-box-shadow: 0px 0px 1px #999;
+     -webkit-box-shadow: 0px 0px 1px ##999;
+      box-shadow: 0px 0px 1px ##999;
+}
+#n{ height:30px;}
+#hvr{ caption-side:top30px }
+#googleeffect *:focus {
+ 
+ width:600px;
+  
+  outline: none;
+ border: 1px solid #090;
+ 
+ 
+  
+  
+}::-webkit-input-placeholder {
+    color:#666;
+}
+
+:-moz-placeholder {  
+    color:#666;  
+}
+#a{border-top:1px solid; border-top-color:#56B14B;color:#333;
+  
+   border-right:1px solid; border-right-color:#56B14B;color:#333;
+   
+   
+}
+.h{color:#0C0B0A; text-decoration:none; }
+.h:hover{color:#0C0B0A; text-decoration:underline; }
+
+.t:hover
+        {
+           color:#FFF; 
+        }
