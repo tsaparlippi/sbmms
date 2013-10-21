@@ -36,37 +36,76 @@
 
 <div data-role="content" data-theme="c">
 
-<?php
-	
-	if (isset($_GET['id']))
-	
-	{
-	
-	echo '<form action="addrev-exec.php" method="post" name="">';
-	
-	
-	
-			include('config1.php');
-		
-			$id=(int)$_GET['id'];
-	
-			$result = mysql_query("SELECT * FROM customerdatabase WHERE id = $id");
+<form id="save_sched" name="save_sched" method="post" action="save_sched.php" onSubmit="return check()">	
+		<input type="hidden" class="pc_date" name="pc_date"/>
+		<input type="hidden" class="pc_time" name="pc_time" />
+	<center>	
+		<div data-role="fieldcontain">
+<input name="TDate" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" id="TDate" class="hide"><br>
+</div>
 
-			while($row = mysql_fetch_array($result))
-			
-  			{
-			
-				echo '<input type="hidden" name="userid" value="'. $row['id'] .'">'; 	
-					
-				echo '<input type="text" name="name"  placeholder="Name" value="'. $row['name'] .'">';
-           
-				echo '<input type="text" placeholder="Contanct Number" onkeypress="return isNumberKey(event)" name="contactnumber" value="'. $row['contactnumber'] .'">';
-             
-				echo '<td><input name="Input" type="submit" value="Save" data-theme="a" /></td>';
-			}
-	}
-			
+<div data-role="fieldcontain">
+<select name="event" id="event" required="required">
+	<option value=""> Choose event</option>
+	<option >Acquaintance Party
+	<option>Anniversary
+	<option>Baptism
+	<option>Birthday
+	<option>Christmas Party
+	<option>Conference
+	<option>Debut
+	<option>Despedida Party
+	<option>Engagement Party
+	<option>Halloween Party
+	<option>Overnight
+	<option>Pre-Nuptial
+	<option>Reunion
+	<option>Seminar
+	<option>
+</select>
+	
+
+	<div data-role="fieldcontain">
+	
+<?php
+		
+		  include('config1.php');
+		$result = mysql_query("SELECT * FROM guest");
+								
+				echo '<select id="Name"  name="Name" required="required">';
+				echo '<option value="">Choose customer</option>';	
+								while($row = mysql_fetch_array($result))
+								  {
+									$Name= $row['Name'];
+									echo "<option value='$Name'>$Name</option>";
+																
+				}
+				echo '</select>';
 	?>
+	</div>
+	<div data-role="fieldcontain">
+	<select name="venue" id="venue" required="required">
+	<option value=""> Choose venue</option>
+	<option>Veranda
+	<option>Function Hall
+	<option>Room #1
+	<option>Room #2
+
+	</select></div>
+	
+	<div data-role="fieldcontain">
+	<select name="status" id="status" required="required">
+	<option value=""> Status</option>
+	<option>Fully Paid
+	<option>Initial Deposit
+	<option>Inquiry
+	</select></div>
+	
+	<div class="field"><input id="save"  type="submit" name="SubmitOne" data-role="button" data-theme="b" value="Save event" class="submit"></div>
+	</div>
+	</form>
+		
+		
 			
 			</div>
 

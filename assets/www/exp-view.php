@@ -35,6 +35,7 @@
 		<div data-role="header" data-position="inline">
 			<a href="index.php" data-icon="arrow-l">Back</a>
 			<h1>Expenses</h1>
+				<a href="addexp.php" data-rel="dialog" data-transition="pop" data-role="button" data-theme="a" data-icon="plusthick"  data-inline="true" rel="external">Add</a>
 		</div>
 		
 			<div data-role="content">
