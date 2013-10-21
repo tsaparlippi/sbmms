@@ -83,26 +83,26 @@
 				
 					<?php 
 					include("config1.php");
-					$customerdatabase = mysql_query("SELECT * FROM customerdatabase") ?>
+					$customerdatabase = mysql_query("SELECT * FROM guest") ?>
 					<?php
 			  
-						$db2 = mysql_query("SELECT id FROM customerdatabase");
-							if (isset($_GET['id'])) {
-								$id = $_GET['id'];
+						$db2 = mysql_query("SELECT Guest_id FROM guest");
+							if (isset($_GET['Guest_id'])) {
+								$Guest_id = $_GET['Guest_id'];
 								}
 		
-						$db = mysql_query("SELECT * FROM customerdatabase ORDER BY id ASC");
+						$db = mysql_query("SELECT * FROM guest ORDER BY Guest_id ASC");
 						while($row = mysql_fetch_array($customerdatabase)){ 
-						$name = $row['name'];
+						$Name = $row['Name'];
 					
 					
 								echo '<tr>';
-								echo '<td>'.$row['name'].'</td>';
+								echo '<td>'.$row['Name'].'</td>';
 		
 							echo '<td>';
-							echo'<a href="cus-details.php?id=' .$row['id'] . ' data-rel="dialog" data-transition="pop"">' . 'View' . '</a>';
+							echo'<a href="cus-details.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop"">' . 'View' . '</a>';
 							echo'|';
-							echo'<a href="editcus.php?id=' .$row['id'] . ' data-rel="dialog" data-transition="pop">' . 'Edit' . '</a>';
+							echo'<a href="editcus.php?Guest_id=' .$row['id'] . ' data-rel="dialog" data-transition="pop">' . 'Edit' . '</a>';
 								
 									echo '</td>';
 									
