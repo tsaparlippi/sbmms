@@ -18,6 +18,7 @@
 		<div data-role="header" data-position="inline">
 			<a href="index.php" data-icon="arrow-l" rel="external">Back</a>
 			<h1>Revenues</h1>
+			<a href="addrev.php"  data-role="button" data-theme="a" data-icon="plusthick"  data-inline="true" rel="external">Add</a>
 		</div>
 		
 		
