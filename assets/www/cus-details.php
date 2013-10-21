@@ -27,34 +27,34 @@
 <?php
 	
 			include('config1.php');
-		if (isset($_GET['id'])) {
-					$id = $_GET['id'];
+		if (isset($_GET['Guest_id'])) {
+					$Guest_id = $_GET['Guest_id'];
 								}
-			$result = mysql_query("SELECT * FROM customerdatabase WHERE id = '$id'");
+			$result = mysql_query("SELECT * FROM guest WHERE Guest_id = '$Guest_id'");
 			while($row = mysql_fetch_array($result)) {
-			$name = $row['name'];
-			$contactnumber = $row['contactnumber'];
+			$Name = $row['Name'];
+			$Contact_no = $row['Contact_no'];
   				 
 				echo '<center>';
-				echo '<b>'.$name.'</b>';
+				echo '<b>'.$Name.'</b>';
 				echo '<br>';
-				echo $contactnumber;
+				echo $Contact_no;
 				echo '<br><br>';
                 echo '<td>' . 'Booked Events: ' . '</td>';
-				$resultA = mysql_query("SELECT * from schedules WHERE customer='$name'");
+				$resultA = mysql_query("SELECT * from guest WHERE Name='$Name'");
 								
 				
 			while($rowA = mysql_fetch_array($resultA)) {
-									$event= $rowA['event'];
-									$date = $rowA['date'];
-									$venue = $rowA['venue'];
-									$status = $rowA['status'];
+									$Company= $rowA['Company'];
+									$TDate = $rowA['TDate'];
+									$Venue = $rowA['Venue'];
+									$Status = $rowA['Status'];
 									echo "<div data-role='content'>
 														
 														<div  data-role='collapsible-set'data-iconpos='right' >
 														<div data-role='collapsible' data-theme='b' data-content-theme='a'  data-collapsed-icon='arrow-d'   data-expanded-icon='arrow-u'style='margin-bottom:-20px; margin-top: -20px; '>
-														<h2> $event</h2>
-														$date</br>$venue</br>$status
+														<h2> $Comapny</h2>
+														$TDate</br>$venue</br>$Status
 														</div>
 														</div></div>";
 															
