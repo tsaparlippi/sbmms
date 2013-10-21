@@ -62,7 +62,7 @@
 							<?php
 								include("config1.php");
 							
-								$revenues = mysql_query("SELECT * FROM guest") ?>
+								$revenues = mysql_query("SELECT * FROM guest WHERE Payment != '$Inquiry'") ?>
 					
 							<?php
 			  
@@ -80,7 +80,7 @@
 									}
 								}
 		
-								$db = mysql_query("SELECT * FROM revenues ORDER BY Guest_id ASC");
+								$db = mysql_query("SELECT * FROM revenues ORDER BY Guest_id ASC WHERE Payment != '$Inquiry'");
 									while($row = mysql_fetch_array($revenues)){ 
 					
 										echo '<tr>';
