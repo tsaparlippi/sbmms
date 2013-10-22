@@ -134,7 +134,7 @@ if( $thevacantroom>0){
 				<option value="Inquiry">Inquiry </option>			
 			</select><br>
 
-			<input type="text" name="Amount" id="Amount" placeholder="Amount" onKeyPress="return isNumberKey(event)"><br><br>
+			<input type="text" name="Amount" id="Amount" placeholder="Amount" maxlength="4" onKeyPress="return isNumberKey(event)"><br><br>
 					
 			<input type="submit" data-role="button" data-theme="b" id="button1" value="Reserve" /></div></center><?php
 
