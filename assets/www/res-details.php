@@ -38,33 +38,44 @@
 			$Payment = $row['Payment'];
 			$Amount = $row['Amount'];
 			
+			
+				echo '<center>';
+				echo '<table width="600" border="0" cellpadding="0">';
+				echo '<tr>';
+				echo '<td width="87" valign="top"><div align = "right"/>  Name:</td>';
+				echo '<td width="281"><div align = "left"/>&nbsp; &nbsp; &nbsp;<b>'.$Name.'</b></td>';
+				echo '</tr>';
+				echo '<tr>';
+				echo '<td><div align = "right"/>Contact Number:</td>';
+				echo '<td><div align = "left"/>&nbsp; &nbsp; &nbsp;<b>'.$Contact_no.'</b></td>';
+				echo '</tr>';
+				echo '<tr>';
+				echo '<td><div align = "right"/>Event:</td>';
+				echo '<td><div align = "left"/>&nbsp; &nbsp; &nbsp;<b>'.$Company.'</b></td>';
+				echo '</tr>';
+				echo '<tr>';
+				echo '<td><div align = "right"/>Total Payment:</td>';
+				echo '<td><div align = "left"/>&nbsp; &nbsp; &nbsp;<b>P'.$Amount.'&nbsp; &nbsp; &nbsp;('.$Payment.')</b></td>';
+				echo '</tr>';
+				echo '<tr>';
+				echo '<td valign="top"><div align = "right"/>Venue(s): </td>';
+				echo '<td><div align = "left"/>';
+				
 			$resultA = mysql_query("SELECT * FROM reservation_info WHERE Guest_id = '$Guest_id'");
 			while($rowA = mysql_fetch_array($resultA)) {
 			$Room_no = $rowA['Room_no'];
-			
 			$resultB = mysql_query("SELECT * FROM room WHERE Room_no = '$Room_no'");
 			while($rowB = mysql_fetch_array($resultB)) {
 			$venue = $rowB['Description'];
-			
-			
-  				 
-				echo '<center>';
-				echo '<b>'.$Name.'</b>';
-				echo '<br>';
-				echo '<b>'.$Contact_no.'</b>';
-				echo '<br>';
-				echo '<b>'.$Company.'</b>';
-				echo '<br>';
-				echo '<b>'.$venue.'</b>';
-				echo '<br>';
-				echo '<b>'.$Payment.': P'.$Amount.'</b>';
-				echo '<br>';
+
+				echo '&nbsp; &nbsp; &nbsp;<b>'.$venue.'</b>';
 				
-                
+				
 			}
 			}	
 			}
-	
+				echo '</tr>';
+                echo '</table>';
 		
 	?>
 			
