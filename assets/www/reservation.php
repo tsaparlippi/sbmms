@@ -49,11 +49,11 @@
 			
 			
 							
-								<input name="start" type="date" data-role="datebox" id="start" required title="Please Input Date of Arrival" class="ed"    placeholder="datestart"
+								<input required title="Please Input Date of Arrival" name="start" type="date" data-role="datebox" id="start"  class="ed"    placeholder="datestart"
 										data-options='{"mode": "calbox", "afterToday": true, "maxDays": 31}' /><br><br>
 
 						
-							<input name="end" type="date" data-role="datebox" id="end" required title="Please Input Date of Arrival" class="ed"  placeholder="dateend"
+							<input required title="Please Input Date of Departure" name="end" type="date" data-role="datebox" id="end"  class="ed"  placeholder="dateend"
 										data-options='{"minDays": 15, "maxDays": -15, "mode": "calbox"}'/> <br><br>
 										
 				
