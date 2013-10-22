@@ -94,8 +94,13 @@
 											echo '<h2>'.$rowA['Name'].'</h2>';
 											echo '<p class="ui-li-aside">
 											<a href="res-details.php?Guest_id=' .$row['Guest_id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">' . 'View' . '</a>
+<<<<<<< HEAD
 											<a href="editres.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>
 											<a href="#popupDialog" data-mini="true"  data-theme="f" data-rel="popup" data-position-to="window" data-role="button"  data-inline="true" data-transition="pop">'.'Cancel'.'</a></p>';
+=======
+											<a href="editres.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog"   data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>
+											<a href="#popupDialog"  data-theme="f" data-rel="popup" data-position-to="window" data-role="button"  data-inline="true" data-iconpos="notext" data-icon="delete" data-transition="pop"></a></p>';
+>>>>>>> updated event's schedule ui
 											
 											echo' <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
 											<div data-role="header" data-theme="a" class="ui-corner-top">
