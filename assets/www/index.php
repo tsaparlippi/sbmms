@@ -7,33 +7,45 @@
 	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
-</head> 
+
+	</head> 
 
 <body>
 
-<div data-role="page" class="type-home" style="background-image: url('images/bg.jpg'); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;">
-<div data-role="content">	
+	<div data-role="page" class="type-home"  data-icon="loading"
+			style="background-image: url('images/bg.jpg'); 
+					background-attachment: fixed; 
+					background-repeat: repeat-y; 
+					background-size: 100% 100%;">
+
+		<div data-role="content" id="btnLoad">	
 		
 	
-<br><br>
+		<br><br>
 
-<center>
-<img src="images/logo.jpg" height="130px" width="275px">
-</center>
-			<br>
-<div class="content-primary">
-<ul data-role="listview" data-inset="true" data-theme="a">
-			<li><a href="rev-view.php">Revenues</a></li>
-			<li><a href="exp-view.php">Expenses</a></li>
-			<li><a href="summary-rev.php">Summary</a></li>
-			<li><a href="bookingsched.php">Booking Schedule</a></li>
-			<li><a href="cus-add.php">Customer's Database</a></li>
-		</ul>
-		
-	</div><!-- /content -->
+			<center>
+				<img src="images/logo.jpg" height="130px" width="275px">
+			</center>
+			
+		<br>
+			
+			<div class="content-primary">
 
-</div><!-- /page -->
-</div>
+				<ul data-role="listview" data-inset="true" data-theme="a" >
+					<li><a href="rev-view.php">Revenues</a></li>
+					<li><a href="exp-view.php">Expenses</a></li>
+					<li><a href="summary.php">Summary</a></li>
+					<li><a href="bookingsched.php" rel="external">Booking Schedule</a></li>
+					<li><a href="res-view.php">Event's Schedule</a></li>
+					<li><a href="reservation.php" rel="external">Reservation</a></li>
+					<li><a href="cus-view.php">Customer's Database</a></li>
+				</ul>
+				
+			</div><!-- /content-primary -->
+			
+		</div><!-- /content -->
+
+	</div><!-- /page -->
 
 </body>
 </html>
