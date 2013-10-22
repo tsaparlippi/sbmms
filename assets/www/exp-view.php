@@ -14,22 +14,6 @@
 					background-attachment: fixed; 
 					background-repeat: repeat; 
 					background-size: 100% 100%;">
-					
-		<style type="text/css" title="currentStyle">
-			@import "css/demo_page.css";
-			@import "css/demo_table_jui.css";
-		</style>
-		
-		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-	
-		<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				oTable = $('#example').dataTable({
-					"bJQueryUI": true,
-					"sPaginationType": "full_numbers"
-				});
-			} );
-		</script>
 		
 
 		<div data-role="header" data-position="inline">
@@ -42,22 +26,7 @@
 				
 				<center>
 					
-					<div id="dt_example">
 				
-					<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-
-						<thead>
-							<tr>
-								<th>Date</th>
-								<th>Expenses</th>
-								
-								<th>Amount</th>
-						
-							</tr>
-						</thead>
-					
-						<tbody>
-					
 							<?php
 								include("config1.php");
 							
@@ -78,27 +47,23 @@
 		
 									}
 								}
+								
+								echo '<ul data-role="listview" data-filter="true" data-filter-placeholder="Search expenses..." data-inset="true">';
 		
 								$db = mysql_query("SELECT * FROM expenses ORDER BY id ASC");
 									while($row = mysql_fetch_array($expenses)){ 
 					
-										echo '<tr>';
-											echo '<td>'.$row['date'].'</td>';
-											echo '<td>'.$row['expense'].'</td>';
-											echo '<td align="right">'.$row['cost'].'</td>';
-										echo '</tr> ';
+										echo '<li>';
+										echo '<h2>'.$row['expense'].'</h2>';	
+										echo '<p> <font color="green">'.$row['date'].' | P'.$row['cost'].'</font> </a>';
+										echo '</li> ';
 							
 								}
+								
+								
+									echo '</ul>';
 							?>
 				
-						</tbody>
-					</table>
-					
-					</div>
-			</div><!-- /content -->
-
-	</div><!-- /page -->
-		
 				
 </body>
 </html>
