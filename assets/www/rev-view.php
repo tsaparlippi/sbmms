@@ -1,22 +1,12 @@
-<?php
-$con = mysql_connect("localhost", "root", "");
-if (!$con) {
-    die("Error: " . mysql_error());
-}
-mysql_select_db("sbms", $con);
-$result = mysql_query("SELECT * FROM revenues");
-?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-
+<!DOCTYPE html> 
+<html> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
 	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="/tableview-master/css/latest.css" />
 	<script src="js/jquery.min.js"></script>
+	<script src="tableview-master/js/latest.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
 	
-	
-	<script src="lib/jquery.js" type="text/javascript"></script>
 	<script src="facebox/facebox.js" type="text/javascript"></script>
  
 	
@@ -28,10 +18,10 @@ $result = mysql_query("SELECT * FROM revenues");
       })
     })
 	</script>
+	
 	<style type="text/css" title="currentStyle">
 		
 			@import "css/demo_table_jui.css";
-			@import "js/smoothness/jquery-ui-1.8.4.custom.css";
 		</style>
 		
 	<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
@@ -44,53 +34,73 @@ $result = mysql_query("SELECT * FROM revenues");
 				});
 			} );
 		</script>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="media/js/jquery.js" type="text/javascript"></script>
-        <script src="media/js/jquery.dataTables.js" type="text/javascript"></script>
-        <style type="text/css">
-            @import "media/css/demo_table_jui.css";
-            @import "media/themes/smoothness/jquery-ui-1.8.4.custom.css";
-        </style>
-        <style>
-            *{
-                font-family: arial;
-            }
-        </style>
-        <script type="text/javascript" charset="utf-8">
-            $(document).ready(function(){
-                $('#datatables').dataTable({
-                    "sPaginationType":"full_numbers",
-                    "aaSorting":[[2, "desc"]],
-                    "bJQueryUI":true
-                });
-            })
-        </script>
-    </head>
-    <body>
-        <div>
-            <table id="datatables" class="display">
-                <thead>
-                    <tr>
-                        <th>Event</th>
-                        <th>Amount</th>
-                       
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php
-                    while ($row = mysql_fetch_array($result)) {
-                        ?>
-                        <tr>
-                            <td><?=$row['event']?></td>
-                            <td><?=$row['cost']?></td>
-                          
-                        </tr>
-                        <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
+
+<body>
+
+<div data-role="page" class="type-home" style="background-image: url('images/bg.jpg'); background-attachment: fixed; background-repeat: no-repeat; background-size: 100% 100%;">
+
+<div data-role="header" data-position="inline">
+				<a href="index.php" data-icon="arrow-l">Back</a>
+				<h1>Revenues</h1>
+			</div>
+	
+<div data-role="content">	
+
+		
+		
+		</div>
+		
+		<?php include('config1.php'); ?>
+		
+		
+				<center>
+				
+				<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
+
+					<thead>
+						<tr>
+							<th style="width:85px;">Date</th>
+							<th style="width:85px;">Event</th>
+							<th style="width:120px;">Customer</th>
+							<th style="width: 70px;">Amount</th>
+						
+						</tr>
+					</thead>
+					
+					<tbody>
+					<?php $revenues = mysql_query("SELECT * FROM revenues") or die(mysql_error());  ?>
+					<?php
+			  
+						$sql2 = mysql_query("SELECT id FROM revenues");
+							if (isset($_GET['id'])) {
+								$id = $_GET['id'];
+								$sql2 = "DELETE FROM revenues WHERE id = '$id'";
+									if (@mysql_query($sql2)) {
+		
+									} else {
+		
+								}
+								}
+		
+						$sql = mysql_query("SELECT * FROM revenues ORDER BY id ASC");
+						while($row = mysql_fetch_array($revenues)){ 
+					
+								echo '<tr>';
+									echo '<td>'.$row['date'].'</td>';
+									echo '<td>'.$row['event'].'</td>';
+									echo '<td>'.$row['customer'].'</td>';
+									echo '<td>'.$row['cost'].'</td>';
+								 echo '</tr> ';
+							
+								  }
+			?>
+			</tbody>
+			</table>
+			
+			</div></div></div>
+			
+		</div>
+		</div>
 				
 </body>
 </html>
