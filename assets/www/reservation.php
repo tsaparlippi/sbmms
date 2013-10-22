@@ -49,11 +49,11 @@
 			
 			
 							
-								<input required title="Please Input Date of Arrival" name="start" type="date" data-role="datebox" id="start"  class="ed"    placeholder="datestart"
+								<input required title="Please Input Date of Arrival" name="start" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" type="date" data-role="datebox" id="start"  class="ed"    placeholder="<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>"
 										data-options='{"mode": "calbox", "afterToday": true, "maxDays": 31}' /><br><br>
 
 						
-							<input required title="Please Input Date of Departure" name="end" type="date" data-role="datebox" id="end"  class="ed"  placeholder="dateend"
+							<input required title="Please Input Date of Departure" name="end" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" type="date" data-role="datebox" id="end"  class="ed"  placeholder="<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>"
 										data-options='{"minDays": 15, "maxDays": -15, "mode": "calbox"}'/> <br><br>
 										
 				
