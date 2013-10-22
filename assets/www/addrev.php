@@ -46,9 +46,9 @@
 
 
 	Personal Information<br>
-			<input required title="*Please Enter Your Full Name" class="sf" type="text" name="name" placeholder="Complete Name">
-	<input title="Your Address. Must Have Brgy. City eg. Salvacion Panabo City." required class="sf"  type="text"   name="Address" placeholder="Address">
-<input pattern=".{6,}" title="Your Mobile No. Must be 11 digit number.  eg. format 09092967492" required  class="sf" type="text"   name="Contact_no" placeholder="Contact_no" maxlength="11" onKeyPress="return isNumberKey(event)">
+			<input required title="*Please Enter Your Full Name" class="sf" type="text" name="Name" id="Name" placeholder="Complete Name">
+	<input title="Your Address. Must Have Brgy. City eg. Salvacion Panabo City." required class="sf"  type="text"   id="Address" name="Address" placeholder="Address">
+<input pattern=".{6,}" title="Your Mobile No. Must be 11 digit number.  eg. format 09092967492" required  class="sf" type="text"   name="Contact_no" id="Contact_no" placeholder="Contact_no" maxlength="11" onKeyPress="return isNumberKey(event)">
 
 
 <div data-role="fieldcontain">
