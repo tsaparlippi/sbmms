@@ -5,6 +5,7 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1" url="rev-view.php"> 
 	<link rel="stylesheet" href="css/jquery.mobile.min.css" />
+	<link rel="stylesheet" href="css/redbutton.css" />
 	<script src="js/jquery.min.js"></script> 
 	<script src="js/jquery.mobile.min.js"></script>
 	
@@ -36,6 +37,7 @@
 </script>
 
 
+
 </head>
 <body>
 
@@ -44,22 +46,6 @@
 					background-attachment: fixed; 
 					background-repeat: repeat; 
 					background-size: 100% 100%;">
-					
-			<style type="text/css" title="currentStyle">
-			@import "css/demo_page.css";
-			@import "css/demo_table_jui.css";
-		</style>
-		
-		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
-
-<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				oTable = $('#example').dataTable({
-				"bJQueryUI": true,
-					"sPaginationType": "full_numbers"
-				});
-			} );
-		</script>
 
 		
 		
@@ -77,22 +63,7 @@
 				
 				<center>
 					
-					<div id="dt_example">
-				
-					<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-
-					<thead>
-						<tr>
-							<th>Customer</th>
-							<th>Schedule</th>
-							
-						<th style="width:50px;">Action</th>
-							
-						</tr>
-					</thead>
 					
-					<tbody>
-				
 					<?php 
 					include("config1.php");
 					$reservation = mysql_query("SELECT * FROM reservation") ?>
@@ -108,55 +79,48 @@
 		
 														}
 												}
-		
+												
+												
+						echo '<ul data-role="listview" data-filter="true" data-filter-placeholder="Search schedule..." data-inset="true">';							
+						
 						$db = mysql_query("SELECT * FROM reservation ORDER BY Guest_id ASC");
 						while($row = mysql_fetch_array($reservation)){ 
 						$guest_id = $row['Guest_id'];
+
 						$db2 = mysql_query("SELECT * FROM guest WHERE Guest_id = '$guest_id'");
 						while($rowA = mysql_fetch_array($db2)){ 
-					
-					
-								echo '<tr>';
-								echo '<td>'.$rowA['Name'].'</td>';
-								echo '<td>'.$row['Date_start'].' <b>to</b> '.$row['Date_end'].'</td>';
-		
-							echo '<td>';
-							echo'<a href="res-details.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop"">' . 'View' . '</a>';
-							echo'|';
-							echo'<a href="editres.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop" rel="external">' . 'Edit' . '</a>';
-							echo'|';
-							echo'<a href="#popupDialog" data-rel="popup" data-position-to="window" data-inline="true" data-transition="pop">'.'Cancel'.'</a>';
-							
-							echo' <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
-							<div data-role="header" data-theme="a" class="ui-corner-top">
-							<h1>Confirm</h1>	</div>
-								<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
-								<h3 class="ui-title">Are you sure you want to cancel schedule?</h3>
-							<center>
-							<a data-role="button" data-inline="true"  data-transition="flow" data-theme="b" rel="external"
-							class="delete" Guest_id="<?php echo $Guest_id; ?>" href=deleterev.php?Guest_id=' .$row['Guest_id'] . '>'. 'Yes'.'</a>
-							<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a"> No </a> 
-							</div>
-							</div>';
+						
+							echo '<li>';
+											echo '<h2>'.$rowA['Name'].'</h2>';
+											echo '<p class="ui-li-aside">
+											<a href="res-details.php?Guest_id=' .$row['Guest_id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">' . 'View' . '</a>
+											<a href="editres.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>
+											<a href="#popupDialog" data-mini="true"  data-theme="f" data-rel="popup" data-position-to="window" data-role="button"  data-inline="true" data-transition="pop">'.'Cancel'.'</a></p>';
+											
+											echo' <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
+											<div data-role="header" data-theme="a" class="ui-corner-top">
+												<h1>Confirm</h1>	</div>
+												<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+													<h3 class="ui-title">Are you sure you want to cancel schedule?</h3>
+												<center>
+											<a data-role="button" background="#c1272d" data-inline="true"  data-transition="flow" data-theme="b" rel="external"
+														class="delete" Guest_id="<?php echo $Guest_id; ?>" href=deleterev.php?Guest_id=' .$row['Guest_id'] . '>'. 'Yes'.'</a>
+													<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a"> No </a> 
+												</div>
+												</div>';
 										
-									echo '</td>';
+											echo '<p> <font color="green"><b>'.$row['Date_start'].' to '.$row['Date_end'].' </b> </font> </p>';
+											echo ' </li>';
+      					
+										
+								}
+								}
 									
-								echo '</tr> ';
-							
-								  }			
-							}
-					?>
-					
-				
-					</tbody>
-					</table>
-					
-					</div>
+									echo '</ul>';
+										?>
 					
 					
-			</div><!-- /content -->
-
-	</div><!-- /page -->
+			
 		
 				
 </body>
