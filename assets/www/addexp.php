@@ -50,7 +50,7 @@
 	
 	
 	<div data-role="fieldcontain">
-	<input name="cost" id="cost" placeholder="Amount" onKeyPress="return isNumberKey(event)"> <br></div>
+	<input name="cost" id="cost" placeholder="Amount" required class="sf" onKeyPress="return isNumberKey(event)"> <br></div>
 	
 	<div class="field"><input id="save"  type="submit" name="SubmitOne" data-role="button" data-theme="b" value="Save expense" class="submit"></div>
 	</div>
