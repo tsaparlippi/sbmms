@@ -8,32 +8,6 @@
 	<script src="js/jquery.mobile.min.js"></script>
 	
 	
-	<script type="text/javascript" src="js/jquery.validate.js"></script>
-<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-
- <script type="text/javascript">
-$(document).on('pageinit', function () {
-
-    $("#summary").validate({
-        rules: {
-			month: "required",
-            year: "required"
-          
-			
-        },
-        submitHandler: function (form) { // for demo
-            sfkshfjdshfjdsfhd; // for demo
-            return false; // for demo
-        }
-    });
-
-});
-</script>
- 
- 
-</head>
-
-	
 </head>
  
 
@@ -75,30 +49,28 @@ $(document).on('pageinit', function () {
 	<center>
 
 <div data-role="fieldcontain" data-position="inline" data-inline="true">
-		<form action="custom_summary.php" name="summary" id="summary" method="POST">
-	
-	<div data-role="fieldcontain" data-inline="true">
-		<select name="month" id="month" class="required">
-		<option>January
-		<option>February
-		<option>March
-		<option>April
-		<option>May
-		<option>June
-		<option>July
-		<option>August
-		<option>September
-		<option>October
-		<option>November
-		<option>December
+		<form action="custom_summary.php" method="POST">
+		<div data-role="fieldcontain" data-inline="true">
+		<select name="month">
+		<option value="1">January</option>
+		<option value="2">February</option>
+		<option value="3">March</option>
+		<option value="4">April</option>
+		<option value="5">May</option>
+		<option value="6">June</option>
+		<option value="7">July</option>
+		<option value="8">August</option>
+		<option value="9">September</option>
+		<option value="10">October</option>
+		<option value="11">November</option>
+		<option value="12">December</option>
 		</select></div>
 		
 		<div data-role="fieldcontain">
-			<input type="text" name="year" placeholder="Year" onkeypress="return isNumberKey(event)" class="required" />
-		</div>
+<label for="myinput1"> </label><input type="text" name="year" placeholder="Year" onkeypress="return isNumberKey(event)"  />
+</div>
 	
-		<div class="field"><input id="save"  type="submit" name="SubmitOne" data-role="button" data-theme="b" value="Proceed" class="submit"></div>
-	</div>
+		<div class="field"><button id="submit" name="submit" data-role="button" data-theme="b">Proceed</button></div>
 		</form>
 		
 		
