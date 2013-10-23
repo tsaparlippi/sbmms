@@ -78,7 +78,7 @@
 					
 							echo						'&nbsp; &nbsp; &nbsp;<b>'.$venue.'</b>';
 							}	}
-							echo 						"<br>$Payment: <b>P$Amount.00</b>
+							echo 						"<br>Amount: <b>P$Amount.00</b> $Payment
 														</div>
 														</div>
 														
