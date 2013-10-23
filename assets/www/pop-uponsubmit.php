@@ -1,9 +1,5 @@
 <!DOCTYPE html> 
 <html> 
-<<<<<<< HEAD
-=======
-
->>>>>>> fixing validation error reservation
 	<head> 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -13,45 +9,8 @@
 	
 	<script type="text/javascript" src="js/jquery.validate.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
-<<<<<<< HEAD
 	
 	  <!-- Number only -->
-=======
-
-
-		         <script type="text/javascript">
- <script type="text/javascript">
-$(document).on('pageinit', function () {
-
-    $("#form").validate({
-        rules: {
-            Name: "required",
-            Address: "required",
-			Contact_no: {
-				required: true,
-					minlength: 11,
-					maxlength: 11
-				},
-				
-			Company: "required",
-			venue: "required",
-			Amount: {
-			 required: true,
-                maxlength: 4
-				
-			}
-        },
-        submitHandler: function (form) { // for demo
-            sfkshfjdshfjdsfhd; // for demo
-            return false; // for demo
-        }
-    });
-
-});
-</script>
-        
-          <!-- Number only -->
->>>>>>> fixing validation error reservation
     <SCRIPT language=Javascript>
      
       function isNumberKey(evt)
@@ -98,7 +57,6 @@ $(this).attr("checked",status);
 	 <script type="text/javascript">
 $(document).on('pageinit', function () {
 
-<<<<<<< HEAD
     $("#form").validate({
         rules: {
             Name: "required",
@@ -129,10 +87,6 @@ $(document).on('pageinit', function () {
 
 	</head>
 	
-=======
-        </head>
-        
->>>>>>> fixing validation error reservation
 <body>
 
 <div data-role="dialog">
@@ -181,12 +135,9 @@ $gabie=$difference;
 
   $thevacantroom = mysql_num_rows($query2); // count the number of vacant room
 
-<<<<<<< HEAD
 if( $thevacantroom>0){	
 	?><form action="try3.php"  onsubmit="return ValidateForm1(this)" name="form" id="form"  method="post" target="_self">
 		<center><div data-role="fieldcontain">
-		
-		<input name="TDate" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" id="TDate" class="hide"><br>
 			Personal Information<br><br>
 			<input class="required" type="text" name="name" placeholder="Complete Name"><br>
 			<input class="required"  type="text"   name="Address" placeholder="Address"><br>
@@ -236,65 +187,6 @@ if( $thevacantroom>0){
 	 
 	 echo '<div date-role="fieldcontain"> As of <font color="green"><b>'.$st.' </b></font> to <font color="green"><b>'.$en.'</b></font> '.$gabie.'   Vacant  is <b>'.$only.'</b></div><br><br>';
 	
-=======
-
-if( $thevacantroom>0){        
-        ?><form  id="form" name="form" method="post"  action="try3.php" target="_self">
-                <center><div data-role="fieldcontain">
-				
-<input name="TDate" data-mini="true" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" id="TDate" class="hide"><br>
-
-                        Personal Information<br><br>
-                        <input type="text" name="Name" id="Name" placeholder="Complete Name"  class="required"><br>
-                        <input type="text"   name="Address" id="Address" placeholder="Address" class="required"><br>
-                        <input type="text"   name="Contact_no" id="Contact_no" placeholder="Contact_no" class="required" onKeyPress="return isNumberKey(event)"><br>
-                        <select name="Company" placeholder="Company" id="Company" class="required" >
-                                <option value=""> Choose event</option>
-                                <option >Acquaintance Party
-                                <option>Anniversary
-                                <option>Baptism
-                                <option>Birthday
-                                <option>Christmas Party
-                                <option>Conference
-                                <option>Debut
-                                <option>Despedida Party
-                                <option>Engagement Party
-                                <option>Halloween Party
-                                <option>Overnight
-                                <option>Pre-Nuptial
-                                <option>Reunion
-                                <option>Seminar
-                        <option>
-                        </select><br>
-                        <select name="Payment" placeholder="Payment" id="Payment" class="required">
-                                <option value=""> Choose status</option>
-                                <option value="Full Payment">Full Payment </option>
-                                <option value="Initial Payment">Initial Payment </option>
-                                <option value="Inquiry">Inquiry </option>                        
-                        </select><br>
-
-                        <input type="text" name="Amount" id="Amount" placeholder="Amount" onKeyPress="return isNumberKey(event)" class="required"><br><br>
-                                        
-                        <input type="submit" data-role="button" data-theme="b" id="button1" value="Reserve" /></div></center><?php
-
-         if ($thevacantroom==1){
-                 $only=$thevacantroom.'   ROOM Only.'; 
-                 }
-                 else{
-                         $only=$thevacantroom.'   ROOMS';
-                         
-                         }
-                         if ($gabie==1){
-                                 $gabie=$gabie.'   NIGHT  ';
-                         }
-                         else{
-                                  $gabie=$gabie.'   NIGHTS  ';
-                         }
-         
-         echo '<div date-role="fieldcontain"> As of <font color="green"><b>'.$st.' </b></font> to <font color="green"><b>'.$en.'</b></font> '.$gabie.'   Vacant  is <b>'.$only.'</b></div><br><br>';
-        
-
->>>>>>> fixing validation error reservation
 while($rows2 = mysql_fetch_array($query2))
   {
 	  echo '<div date-role="fieldcontain">';
