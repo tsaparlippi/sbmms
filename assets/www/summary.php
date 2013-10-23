@@ -7,7 +7,9 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
 	
-	
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+ 
 </head>
  
 
@@ -34,7 +36,23 @@
 
 }
 </script>
+<script type="text/javascript">
+$(document).on('pageinit', function () {
 
+    $("#save_sum").validate({
+        rules: {
+            year: "required",
+           
+			}
+        },
+        submitHandler: function (form) { // for demo
+            sfkshfjdshfjdsfhd; // for demo
+            return false; // for demo
+        }
+    });
+
+});
+</script>
 
 <div data-role="header" data-position="inline">
 				<a href="index.php" data-icon="arrow-l">Back</a>
@@ -49,7 +67,7 @@
 	<center>
 
 <div data-role="fieldcontain" data-position="inline" data-inline="true">
-		<form action="custom_summary.php" method="POST">
+		<form action="custom_summary.php" method="POST" name="save_sum" id="save_sum">
 		<div data-role="fieldcontain" data-inline="true">
 		<select name="month">
 		<option value="1">January</option>
@@ -67,7 +85,7 @@
 		</select></div>
 		
 		<div data-role="fieldcontain">
-<label for="myinput1"> </label><input type="text" name="year" placeholder="Year" onkeypress="return isNumberKey(event)"  />
+<label for="myinput1"> </label><input type="text" name="year" placeholder="Year" required="required" onkeypress="return isNumberKey(event)"  />
 </div>
 	
 		<div class="field"><button id="submit" name="submit" data-role="button" data-theme="b">Proceed</button></div>
