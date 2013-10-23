@@ -137,11 +137,20 @@ $gabie=$difference;
 
 if( $thevacantroom>0){	
 	?><form action="try3.php"  onsubmit="return ValidateForm1(this)" name="form" id="form"  method="post" target="_self">
+<<<<<<< HEAD
 		<center>
 			<div data-role="fieldcontain">
 <input name="TDate" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" id="TDate" class="hide"><br>
 </div>
 		<div data-role="fieldcontain">
+=======
+		<center><div data-role="fieldcontain">
+		
+		<div data-role="fieldcontain">
+<input name="TDate" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" id="TDate" class="hide"><br>
+</div>
+
+>>>>>>> cb746cbec2cefc8ddcaa1987f8df9a398292f9ae
 			Personal Information<br><br>
 			<input class="required" type="text" name="name" placeholder="Complete Name"><br>
 			<input class="required"  type="text"   name="Address" placeholder="Address"><br>
