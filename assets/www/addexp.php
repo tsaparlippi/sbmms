@@ -4,6 +4,28 @@
 <link rel="stylesheet" href="css/jquery.mobile.min.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+
+
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+ <script type="text/javascript">
+$(document).on('pageinit', function () {
+
+    $("#save_exp").validate({
+        rules: {
+            expense: "required",
+            cost: "required",
+			
+        },
+        submitHandler: function (form) { // for demo
+            sfkshfjdshfjdsfhd; // for demo
+            return false; // for demo
+        }
+    });
+
+});
+</script>
  
  
 </head>
@@ -46,11 +68,11 @@
 
 	
 	<div data-role="fieldcontain">
-	<input name="expense" id="expense" placeholder="Expense"> <br></div>
+	<input type="text"  name="expense" id="expense" placeholder="Expense" class="required"> <br></div>
 	
 	
 	<div data-role="fieldcontain">
-	<input name="cost" id="cost" placeholder="Amount" required class="sf" onKeyPress="return isNumberKey(event)"> <br></div>
+	<input type="text" name="cost" id="cost" placeholder="Amount" onKeyPress="return isNumberKey(event)" class="required"> <br></div>
 	
 	<div class="field"><input id="save"  type="submit" name="SubmitOne" data-role="button" data-theme="b" value="Save expense" class="submit"></div>
 	</div>
