@@ -56,7 +56,7 @@
 					
 											echo '<li>';
 											echo '<h2>'.$row['Name'].'</h2>';
-											echo '<p> <font color="green">'.$row['TDate'].' | '.$row['Company'].' | P'.$row['Amount'].'</font> </a>';
+											echo '<p> <font color="green">'.$row['TDate'].' | '.$row['Company'].' |  '.$row['venue'].' | P'.$row['Amount'].'</font> </a>';
 											echo ' </li>';
       					
 										
