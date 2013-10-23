@@ -7,6 +7,9 @@
 	<script src="js/jquery.min.js"></script>
 	<script src="js/jquery.mobile.min.js"></script>
 	
+	<script type="text/javascript" src="js/jquery.validate.js"></script>
+	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	
 	  <!-- Number only -->
     <SCRIPT language=Javascript>
      
@@ -56,7 +59,7 @@ $(document).on('pageinit', function () {
 
     $("#form").validate({
         rules: {
-            name: "required",
+            Name: "required",
             Address: "required",
 			Contact_no: {
 				required: true,
@@ -65,8 +68,7 @@ $(document).on('pageinit', function () {
 				},
 				
 			Company: "required",
-			Payment: "required",
-			multi[]: "required",
+			venue: "required",
 			Amount: {
 			 required: true,
                 maxlength: 4
@@ -81,6 +83,7 @@ $(document).on('pageinit', function () {
 
 });
 </script>
+
 
 	</head>
 	
@@ -133,7 +136,7 @@ $gabie=$difference;
   $thevacantroom = mysql_num_rows($query2); // count the number of vacant room
 
 if( $thevacantroom>0){	
-	?><form action="try3.php"  onsubmit="return ValidateForm1(this)" id="form" name="form" method="post" target="_self">
+	?><form action="try3.php"  onsubmit="return ValidateForm1(this)" name="form" id="form"  method="post" target="_self">
 		<center><div data-role="fieldcontain">
 			Personal Information<br><br>
 			<input class="required" type="text" name="name" placeholder="Complete Name"><br>
