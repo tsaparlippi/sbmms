@@ -41,24 +41,49 @@
 				echo $Contact_no;
 				echo '<br><br>';
                 echo '<td>' . 'Booked Events: ' . '</td>';
-				$resultA = mysql_query("SELECT * from guest WHERE Guest_id='$Guest_id'");
-								
+					
 				
+			$resultA = mysql_query("SELECT * from guest WHERE Guest_id='$Guest_id'");
 			while($rowA = mysql_fetch_array($resultA)) {
 									$Company= $rowA['Company'];
 									$TDate = $rowA['TDate'];
-									$venue = $rowA['venue'];
-								
-									echo "<div data-role='content'>
+									$Amount = $rowA['Amount'];
+									$Payment = $rowA['Payment'];
+							}	
+				$resultB = mysql_query("SELECT * from reservation_info WHERE Guest_id='$Guest_id'");
+					while($rowB = mysql_fetch_array($resultB)){
+					$Room_no = $rowB['Room_no']; 
+					$resultC = mysql_query("SELECT * from room WHERE Room_no='$Room_no'");
+					while ($rowC = mysql_fetch_array($resultC)) {
+							$venue = $rowC['Description'];	
+							}
+							}
+						echo "<div data-role='content'>
 														
 														<div  data-role='collapsible-set'data-iconpos='right' >
 														<div data-role='collapsible' data-theme='b' data-content-theme='a'  data-collapsed-icon='arrow-d'   data-expanded-icon='arrow-u'style='margin-bottom:-20px; margin-top: -20px; '>
 														<h2> $Company</h2>
-														$TDate</br>$venue</br>$Status
+														$TDate</br>";
+						$resultB = mysql_query("SELECT * from reservation_info WHERE Guest_id='$Guest_id'");
+					while($rowB = mysql_fetch_array($resultB)){
+					$Room_no = $rowB['Room_no']; 
+					$resultC = mysql_query("SELECT * from room WHERE Room_no='$Room_no'");
+					while ($rowC = mysql_fetch_array($resultC)) {
+							$venue = $rowC['Description'];	
+						
+					
+							echo						'&nbsp; &nbsp; &nbsp;<b>'.$venue.'</b>';
+							}	}
+							echo 						"<br>$Payment: <b>P$Amount.00</b>
 														</div>
-														</div></div>";
+														</div>
+														
+														
+			
+								
+								</div>";
 															
-				}
+				
 			
 				
 			}
