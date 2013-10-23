@@ -75,8 +75,8 @@
 								echo '<h2>'.$row['Name'].'</h2>';
 								
 								echo '<p class="ui-li-aside">
-											<a href="cus-details.php?id=' .$row['id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">' . 'View' . '</a>
-											<a href="editcus.php?id=' .$row['id'] . ' data-rel="dialog"   data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>';
+											<a href="cus-details.php?Guest_id=' .$row['Guest_id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">' . 'View' . '</a>
+											<a href="editcus.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog"   data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>';
 											
 											echo' <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
 											<div data-role="header" data-theme="a" class="ui-corner-top">
