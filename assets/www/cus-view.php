@@ -38,21 +38,7 @@
 					background-repeat: repeat; 
 					background-size: 100% 100%;">
 					
-					<style type="text/css" title="currentStyle">
-			@import "css/demo_page.css";
-			@import "css/demo_table_jui.css";
-		</style>
-		
-		<script type="text/javascript" language="javascript" src="js/jquery.dataTables.js"></script>
 
-<script type="text/javascript" charset="utf-8">
-			$(document).ready(function() {
-				oTable = $('#example').dataTable({
-				"bJQueryUI": true,
-					"sPaginationType": "full_numbers"
-				});
-			} );
-		</script>	
 	<div data-role="header" data-position="inline">
 			<a href="index.php" data-icon="arrow-l">Back</a>
 			<h1>Customer's Database</h1>
@@ -66,20 +52,7 @@
 				
 				<center>
 					
-					<div id="dt_example">
-				
-					<table cellpadding="0" cellspacing="0" border="0" class="display" id="example">
-
-					<thead>
-						<tr>
-							<th>Customer</th>
-							
-							<?php if($_SESSION['user_type'] != 'User'){ ?><th style="width:50px;">Action</th><?php } ?>
-							
-						</tr>
-					</thead>
 					
-					<tbody>
 				
 					<?php 
 					include("config1.php");
@@ -91,22 +64,33 @@
 								$Guest_id = $_GET['Guest_id'];
 								}
 		
+							echo '<ul data-role="listview" data-filter="true" data-filter-placeholder="Search customer..." data-inset="true">';
+							
 						$db = mysql_query("SELECT * FROM guest ORDER BY Guest_id ASC");
 						while($row = mysql_fetch_array($customerdatabase)){ 
 						$Name = $row['Name'];
 					
 					
-								echo '<tr>';
-								echo '<td>'.$row['Name'].'</td>';
-		
-							echo '<td>';
-							echo'<a href="cus-details.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop"">' . 'View' . '</a>';
-							echo'|';
-							echo'<a href="editcus.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog" data-transition="pop">' . 'Edit' . '</a>';
+								echo '<li>';
+								echo '<h2>'.$row['Name'].'</h2>';
 								
-									echo '</td>';
-									
-								echo '</tr> ';
+								echo '<p class="ui-li-aside">
+											<a href="cus-details.php?id=' .$row['id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">' . 'View' . '</a>
+											<a href="editcus.php?id=' .$row['id'] . ' data-rel="dialog"   data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>';
+											
+											echo' <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
+											<div data-role="header" data-theme="a" class="ui-corner-top">
+												<h1>Confirm</h1>	</div>
+												<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+													<h3 class="ui-title">Are you sure you want to cancel schedule?</h3>
+												<center>
+											<a data-role="button" background="#c1272d" data-inline="true"  data-transition="flow" data-theme="b" rel="external"
+														class="delete" Guest_id="<?php echo $Guest_id; ?>" href=deleterev.php?Guest_id=' .$row['Guest_id'] . '>'. 'Yes'.'</a>
+													<a href="#" data-role="button" data-inline="true" data-rel="back" data-theme="a"> No </a> 
+												</div>
+												</div>';
+										
+							
 							
 								  }			
 							
