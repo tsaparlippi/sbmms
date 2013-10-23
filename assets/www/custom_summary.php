@@ -28,8 +28,9 @@ s<!DOCTYPE html>
 
 					$month = $_POST['month'];
 					$year = $_POST['year'];
+				
 
-					$revenues = mysql_query("SELECT SUM(cost) as totalrev FROM revenues WHERE month(date) = '$month' AND year(date) = '$year' ORDER BY date ASC") or die(mysql_error());  
+					$revenues = mysql_query("SELECT SUM(Amount) as totalrev FROM guest WHERE month(TDate) = '$month' AND year(TDate) = '$year' ORDER BY TDate ASC") or die(mysql_error());  
 					$expenses = mysql_query("SELECT SUM(cost) as totalexp FROM expenses WHERE month(date) = '$month' AND year(date) = '$year' ORDER BY date ASC") or die(mysql_error());  
 					
 					$rev = mysql_fetch_array($revenues);
