@@ -44,32 +44,31 @@ s<!DOCTYPE html>
 			?>		
 	
 		
-		<tbody>
-			
-			<br/><br/>
-	
 	<center>
-	
-	<font size="5px">Total:</font><br>
-	<div class="ui-grid-a ui-responsive">
-    <div class="ui-block-a"><div class="ui-body ui-body-d" style="height:30px"><font size="5px" align="center">Revenues</font></div></div>
-    <div class="ui-block-b"><div class="ui-body ui-body-d" style="height:30px" ><font size="5px" align="center" ><?php echo $totalrev; ?></font></div></div>
-    <div class="ui-block-a"><div class="ui-body ui-body-d" style="height:30px"><font size="5px" align="center">Expenses</font></div></div>
-    <div class="ui-block-b"><div class="ui-body ui-body-d" style="height:30px"><font size="5px" align="center"><?php echo $totalexp; ?></font></div></div>
-    <div class="ui-block-a"><div class="ui-body ui-body-d" style="height:30px"><font size="5px" align="center">Income</font></div></div>
-    <div class="ui-block-b"><div class="ui-body ui-body-d" style="height:30px"><font size="5px"><?php echo $income; ?></font></div></div>
-	</div>	</center>
+		
 				
-					
-					</form>
-					
-				</td>
-				
-				</tr>
-	</tbody>
+			<br/><br/>
 
+	<ul data-role="listview" data-inset="true">
+	
+	<li>
+	<h2>Total Revenues</h2>
+	<p class="ui-li-aside"> <font size="4" color="green"><?php echo $totalrev; ?> </font></p>
+	</li>
+	
+	<li>
+	<h2>Total Expenses</h2>
+	<p class="ui-li-aside"> <font size="4" color="green"><?php echo $totalexp; ?></font> </p>
+	</li>
+	
+	<li>
+	<h2>Income</h2>
+	<p class="ui-li-aside"><font size="4" color="green"><?php echo $income ?> </font></p>
+	</li>
+	
+	</ul>
 </center>
 		
-		</div></div></div></div>
+		</div></div>
 </body>
 </html>
