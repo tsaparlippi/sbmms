@@ -41,9 +41,14 @@
 				echo $Contact_no;
 				echo '<br><br>';
                 echo '<td>' . 'Booked Events: ' . '</td>';
+<<<<<<< HEAD
 					
 				
 			$resultA = mysql_query("SELECT * from guest WHERE Guest_id='$Guest_id'");
+=======
+				
+				$resultA = mysql_query("SELECT * from guest WHERE Guest_id='$Guest_id'");
+>>>>>>> f8a060724494ddeeea1348135caf5bbd60849e77
 			while($rowA = mysql_fetch_array($resultA)) {
 									$Company= $rowA['Company'];
 									$TDate = $rowA['TDate'];
