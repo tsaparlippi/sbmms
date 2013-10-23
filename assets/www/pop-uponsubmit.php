@@ -1,5 +1,6 @@
 <!DOCTYPE html> 
 <html> 
+<<<<<<< HEAD
 	<head> 
 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
@@ -11,6 +12,51 @@
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	
 	  <!-- Number only -->
+=======
+        <head> 
+
+        <meta name="viewport" content="width=device-width, initial-scale=1"> 
+        <link rel="stylesheet" href="css/jquery.mobile.min.css" />
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.mobile.min.js"></script>
+		
+		<script type="text/javascript" src="js/jquery.validate.js"></script>
+		<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+		
+		
+		         <script type="text/javascript">
+$(document).on('pageinit', function () {
+
+    $("#form").validate({
+        rules: {
+            Name: "required",
+            Address: "required",
+                        Contact_no: {
+                                required: true,
+                                       minlength: 11,
+                                       maxlength: 11
+                                },
+                                
+                        Company: "required",
+                        Payment: "required",
+                        multi[]: "required",
+                        Amount: {
+                         required: true,
+								maxlength: 4
+                                
+                        }
+        },
+        submitHandler: function (form) { // for demo
+            sfkshfjdshfjdsfhd; // for demo
+            return false; // for demo
+       }
+    });
+
+});
+</script>
+        
+          <!-- Number only -->
+>>>>>>> fixing validation errors
     <SCRIPT language=Javascript>
      
       function isNumberKey(evt)
@@ -23,9 +69,9 @@
       }
       //-->onKeyPress="return isNumberKey(event)"
    </SCRIPT>
-		
-		
-	     
+                
+                
+             
      <!--Check all the checkbox -->
 <script type="text/javascript">
 function toggleChecked(status) {
@@ -47,16 +93,14 @@ $(this).attr("checked",status);
             } else {
                 $('#Amount').hide();
             }
-			
-		
+                        
+                
         });
     });
 
-	</script>
+        </script>
 
-	 <script type="text/javascript">
-$(document).on('pageinit', function () {
-
+<<<<<<< HEAD
     $("#form").validate({
         rules: {
             Name: "required",
@@ -80,26 +124,31 @@ $(document).on('pageinit', function () {
             return false; // for demo
         }
     });
+=======
+>>>>>>> fixing validation errors
 
-});
-</script>
 
+<<<<<<< HEAD
 
 	</head>
 	
+=======
+        </head>
+        
+>>>>>>> fixing validation errors
 <body>
 
 <div data-role="dialog">
 
 <div data-role="header" data-position="inline">
-			
-			<h1>Reservation</h1>
-		
-			</div>
+                        
+                        <h1>Reservation</h1>
+                
+                        </div>
 
-			<div data-role="content">
+                        <div data-role="content">
 
-			
+                        
 <?php
 include("include/mysql_connect.php");//Connect to mysql
  ?><?php 
@@ -125,9 +174,9 @@ $gabie=$difference;
  
   $query2 = mysql_query("select * from room,room_type where room.Type_id=room_type.Type_id and Room_no NOT IN 
                         (select Room_no from reservation,reservation_info 
-						 where 
-						 Date_start<='$end' and Date_end>='$start' 
-						 and
+                                                 where 
+                                                 Date_start<='$end' and Date_end>='$start' 
+                                                 and
                          reservation.Guest_id=reservation_info.Guest_id)");
  
  
@@ -135,6 +184,7 @@ $gabie=$difference;
 
   $thevacantroom = mysql_num_rows($query2); // count the number of vacant room
 
+<<<<<<< HEAD
 if( $thevacantroom>0){	
 	?><form action="try3.php"  onsubmit="return ValidateForm1(this)" name="form" id="form"  method="post" target="_self">
 		<center><div data-role="fieldcontain">
@@ -187,35 +237,92 @@ if( $thevacantroom>0){
 	 
 	 echo '<div date-role="fieldcontain"> As of <font color="green"><b>'.$st.' </b></font> to <font color="green"><b>'.$en.'</b></font> '.$gabie.'   Vacant  is <b>'.$only.'</b></div><br><br>';
 	
+=======
+if( $thevacantroom>0){        
+        ?><form  id="form" name="form" method="post"  action="try3.php" target="_self">
+                <center><div data-role="fieldcontain">
+				
+<input name="TDate" data-mini="true" value= "<?php $time_zone = 'Asia/Singapore'; date_default_timezone_set($time_zone); echo date("Y-m-d"); ?>" id="TDate" class="hide"><br>
+
+                        Personal Information<br><br>
+                        <input type="text" name="Name" id="Name" placeholder="Complete Name"  class="required"><br>
+                        <input type="text"   name="Address" id="Address" placeholder="Address" class="required"><br>
+                        <input type="text"   name="Contact_no" id="Contact_no" placeholder="Contact_no" class="required" onKeyPress="return isNumberKey(event)"><br>
+                        <select name="Company" placeholder="Company" id="Company" class="required" >
+                                <option value=""> Choose event</option>
+                                <option >Acquaintance Party
+                                <option>Anniversary
+                                <option>Baptism
+                                <option>Birthday
+                                <option>Christmas Party
+                                <option>Conference
+                                <option>Debut
+                                <option>Despedida Party
+                                <option>Engagement Party
+                                <option>Halloween Party
+                                <option>Overnight
+                                <option>Pre-Nuptial
+                                <option>Reunion
+                                <option>Seminar
+                        <option>
+                        </select><br>
+                        <select name="Payment" placeholder="Payment" id="Payment" class="required">
+                                <option value=""> Choose status</option>
+                                <option value="Full Payment">Full Payment </option>
+                                <option value="Initial Payment">Initial Payment </option>
+                                <option value="Inquiry">Inquiry </option>                        
+                        </select><br>
+
+                        <input type="text" name="Amount" id="Amount" placeholder="Amount" onKeyPress="return isNumberKey(event)" class="required"><br><br>
+                                        
+                        <input type="submit" data-role="button" data-theme="b" id="button1" value="Reserve" /></div></center><?php
+
+         if ($thevacantroom==1){
+                 $only=$thevacantroom.'   ROOM Only.'; 
+                 }
+                 else{
+                         $only=$thevacantroom.'   ROOMS';
+                         
+                         }
+                         if ($gabie==1){
+                                 $gabie=$gabie.'   NIGHT  ';
+                         }
+                         else{
+                                  $gabie=$gabie.'   NIGHTS  ';
+                         }
+         
+         echo '<div date-role="fieldcontain"> As of <font color="green"><b>'.$st.' </b></font> to <font color="green"><b>'.$en.'</b></font> '.$gabie.'   Vacant  is <b>'.$only.'</b></div><br><br>';
+        
+>>>>>>> fixing validation errors
 while($rows2 = mysql_fetch_array($query2))
   {
-	  echo '<div date-role="fieldcontain">';
+          echo '<div date-role="fieldcontain">';
       echo '<input type="hidden" name="dayinterval" value="'. $dayinterval.'">';
       echo '<input type="hidden" name="sta" value="'.$start.'">';
-	  echo '<input type="hidden" name="en" value="'.$end.'">';
-	  echo '<input type="hidden" name="start" value="'.$start.'">';
-	  echo '<input type="hidden" name="end" value="'.$end.'">';
-	  echo '</div>';
-	  echo '<div date-role="fieldcontain">';
-	  echo '<fieldset data-role="controlgroup" id="pay" >';
-	  echo '<input class="checkbox" title="pili lng" id="checkbox" type="checkbox" value="'.$rows2['Room_no'].'" name="multi[]" >';
-	  echo '<label for="checkbox" id="pay" style="margin-top:-35px"> ';
-	  ?> <img src="<?php  echo $rows2['image']  ?>" style="width:50px;height:50px"  /> <?php
-	  echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P'.$vacant2=$rows2['Rate'].' ';
-	   echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$vacant2=$rows2['Room_type'];
-	   echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$rows2['Bed'].'  Bed(s)';
-	   echo '&nbsp;&nbsp;'.$rows2['Description'].'';
-      echo '</fieldset></div><br></label>	';
+          echo '<input type="hidden" name="en" value="'.$end.'">';
+          echo '<input type="hidden" name="start" value="'.$start.'">';
+          echo '<input type="hidden" name="end" value="'.$end.'">';
+          echo '</div>';
+          echo '<div date-role="fieldcontain">';
+          echo '<fieldset data-role="controlgroup" id="pay" >';
+          echo '<input class="checkbox" title="pili lng" id="checkbox" type="checkbox" value="'.$rows2['Room_no'].'" name="multi[]" >';
+          echo '<label for="checkbox" id="pay" style="margin-top:-35px"> ';
+          ?> <img src="<?php  echo $rows2['image']  ?>" style="width:50px;height:50px"  /> <?php
+          echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P'.$vacant2=$rows2['Rate'].' ';
+           echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$vacant2=$rows2['Room_type'];
+           echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$rows2['Bed'].'  Bed(s)';
+           echo '&nbsp;&nbsp;'.$rows2['Description'].'';
+      echo '</fieldset></div><br></label>        ';
    }echo '</form>';
 echo '</div>';
 
   
 }else  { //IF NO VACANT ROOM EXECUTE Below
-		echo '<div data-role="fieldcontain"><td  style=" text-align:center;color:#red; font-size:24px">No Vacancy from <b>'. $st.'</b> To  <b>'.$en.' Please Try Again.</b>  </td>';  echo "</tr></div>";
-		}
+                echo '<div data-role="fieldcontain"><td  style=" text-align:center;color:#red; font-size:24px">No Vacancy from <b>'. $st.'</b> To  <b>'.$en.' Please Try Again.</b>  </td>';  echo "</tr></div>";
+                }
 
-		mysql_close();//Closing MYSQL connection
-		
+                mysql_close();//Closing MYSQL connection
+                
   ?>
   
   </div> </div>

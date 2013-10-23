@@ -39,7 +39,7 @@ include('include/mysql_connect.php');
 if($N=='' || $N==0){ // IF THE USER LEAVE THE CHECKBOX EMPTY
 						
                      echo  '<center><div data-role="fieldcontain"><b>PLEASE SELECT VENUE.</b> <br>
-					 <a href="reservation.php" data-role="button" data-theme="b" rel="external">Okay</a></div></center>';
+					 <a href="" data-role="button" data-theme="b" data-rel="back">Okay</a></div></center>';
                      exit();
 }
 			
