@@ -4,15 +4,44 @@
 <link rel="stylesheet" href="css/jquery.mobile.min.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
  
+ <script type="text/javascript">
+$(document).on('pageinit', function () {
+
+    $("#save_rev").validate({
+        rules: {
+            Name: "required",
+            Address: "required",
+			Contact_no: {
+				required: true,
+					minlength: 11,
+					maxlength: 11
+				},
+				
+			Company: "required",
+			venue: "required",
+			Amount: {
+			 required: true,
+                maxlength: 4
+				
+			}
+        },
+        submitHandler: function (form) { // for demo
+            sfkshfjdshfjdsfhd; // for demo
+            return false; // for demo
+        }
+    });
+
+});
+</script>
+
  
-</head>
+ </head>
 
 <body>
-
-
-
-	
 
 <SCRIPT language=Javascript>
   
@@ -46,13 +75,13 @@
 
 
 	Personal Information<br>
-			<input required title="*Please Enter Your Full Name" class="sf" type="text" name="Name" id="Name" placeholder="Complete Name">
-	<input title="Your Address. Must Have Brgy. City eg. Salvacion Panabo City." required class="sf"  type="text"   id="Address" name="Address" placeholder="Address">
-<input pattern=".{6,}" title="Your Mobile No. Must be 11 digit number.  eg. format 09092967492" required  class="sf" type="text"   name="Contact_no" id="Contact_no" placeholder="Contact_no" maxlength="11" onKeyPress="return isNumberKey(event)">
+			<input type="text" name="Name" id="Name" placeholder="Complete Name" class="required">
+	<input  type="text"   id="Address" name="Address" placeholder="Address" class="required">
+<input  type="text"  class="required" name="Contact_no" id="Contact_no" placeholder="Contact_no"  onKeyPress="return isNumberKey(event)">
 
 
-<div data-role="fieldcontain">
-<select name="Company" id="Company" required="required">
+<div data-role="fieldcontain" >
+<select name="Company" id="Company" class="required">
 	<option value=""> Choose event</option>
 	<option >Acquaintance Party
 	<option>Anniversary
@@ -73,7 +102,7 @@
 	
 
 	<div data-role="fieldcontain">
-	<select name="venue" id="venue" required="required">
+	<select name="venue" id="venue" class="required">
 	<option value=""> Choose venue</option>
 	<option>Veranda
 	<option>Function Hall
@@ -82,8 +111,9 @@
 
 	</select></div>
 	
-	<div data-role="fieldcontain">
-	<input name="Amount" id="Amount" placeholder="Amount" required class="sf" maxlength="4" onKeyPress="return isNumberKey(event)"> <br></div>
+	
+	<input type="text" name="Amount" id="Amount" placeholder="Amount" class="required" > <br></div>
+
 	
 	<div class="field"><input id="save"  type="submit" name="SubmitOne" data-role="button" data-theme="b" value="Save revenue" class="submit"></div>
 	</div>
