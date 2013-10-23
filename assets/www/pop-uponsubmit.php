@@ -141,7 +141,7 @@ if( $thevacantroom>0){
 			Personal Information<br><br>
 			<input class="required" type="text" name="name" placeholder="Complete Name"><br>
 			<input class="required"  type="text"   name="Address" placeholder="Address"><br>
-			<input class="required" type="text"   name="Contact_no" placeholder="Contact_no" maxlength="11" onKeyPress="return isNumberKey(event)"><br>
+			<input class="required" type="text"   name="Contact_no" placeholder="Contact_no" onKeyPress="return isNumberKey(event)"><br>
 			<select name="Company" placeholder="Company" class="required" >
 				<option value=""> Choose event</option>
 				<option >Acquaintance Party
