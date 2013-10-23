@@ -65,7 +65,7 @@
 					
 					<?php 
 					include("config1.php");
-					$reservation = mysql_query("SELECT * FROM reservation") ?>
+					$reservation = mysql_query("SELECT * FROM reservation ") ?>
 					<?php
 			  
 						$db2 = mysql_query("SELECT Guest_id FROM reservation");
@@ -82,11 +82,11 @@
 												
 						echo '<ul data-role="listview" data-filter="true" data-filter-placeholder="Search schedule..." data-inset="true">';							
 						
-						$db = mysql_query("SELECT * FROM reservation ORDER BY Guest_id ASC");
+						$db = mysql_query("SELECT * FROM reservation ORDER BY Guest_id desc");
 						while($row = mysql_fetch_array($reservation)){ 
-						$guest_id = $row['Guest_id'];
+						$Guest_id = $row['Guest_id'];
 
-						$db2 = mysql_query("SELECT * FROM guest WHERE Guest_id = '$guest_id'");
+						$db2 = mysql_query("SELECT * FROM guest WHERE Guest_id = '$Guest_id'");
 						while($rowA = mysql_fetch_array($db2)){ 
 						
 							echo '<li>';
