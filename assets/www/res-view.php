@@ -9,7 +9,6 @@
 	<script src="js/jquery.min.js"></script> 
 	<script src="js/jquery.mobile.min.js"></script>
 	
-	
 	 <script type="text/javascript">
 	 $(document).delegate('#simplebool', 'click', function() {
   $(this).simpledialog({
@@ -35,6 +34,14 @@
 	
 
 </script>
+
+<style>
+label.error { 
+
+	color: red; 
+	
+}
+</style>
 
 
 </head>
@@ -92,13 +99,13 @@
 							echo '<li>';
 											echo '<h2>'.$rowA['Name'].'</h2>';
 											echo '<p class="ui-li-aside">
-											<a href="res-details.php?Guest_id=' .$row['Guest_id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">' . 'View' . '</a>
-											<a href="editres.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog"   data-role="button" data-inline="true" data-mini="true" data-transition="pop" rel="external">' . 'Edit' . '</a>
+											<a href="res-details.php?Guest_id=' .$row['Guest_id'] . ' data-theme="b" data-rel="dialog" data-inline="true"  data-mini="true"  data-transition="pop" data-role="button"">V</a>
+											<a href="editres.php?Guest_id=' .$row['Guest_id'] . ' data-rel="dialog"   data-role="button" data-inline="true" data-mini="true"  data-transition="pop" rel="external">E</a>
 											<a href="#popupDialog"  data-theme="f" data-rel="popup" data-position-to="window" data-role="button"  data-inline="true" data-iconpos="notext" data-icon="delete" data-transition="pop"></a></p>';
 											
 											echo' <div data-role="popup" id="popupDialog" data-overlay-theme="a" data-theme="c" style="max-width:400px;" class="ui-corner-all">
 											<div data-role="header" data-theme="a" class="ui-corner-top">
-												<h1>Confirm</h1>	</div>
+												<h1>Confirm</h1></div>
 												<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
 													<h3 class="ui-title">Are you sure you want to cancel schedule?</h3>
 												<center>
@@ -108,7 +115,7 @@
 												</div>
 												</div>';
 										
-											echo '<p> <font color="green"><b>'.$row['Date_start'].' to '.$row['Date_end'].' </b> </font> </p>';
+											echo '<p> <font color="green"><b>'.$row['Date_start'].' to <br>'.$row['Date_end'].' </b> </font> </p>';
 											echo ' </li>';
       					
 										

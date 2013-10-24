@@ -84,6 +84,13 @@ $(document).on('pageinit', function () {
 });
 </script>
 
+ <style>
+label.error { 
+
+	color: red; 
+	
+}
+</style>
 
 	</head>
 	
@@ -173,7 +180,7 @@ if( $thevacantroom>0){
 
 			<input type="text" name="Amount" id="Amount" placeholder="Amount" onKeyPress="return isNumberKey(event)" class="required"><br><br>
 					
-			<input type="submit" data-role="button" data-theme="b" id="button1" value="Reserve" /></div></center><?php
+			</div></center><?php
 
 	 if ($thevacantroom==1){
 		 $only=$thevacantroom.'   ROOM Only.'; 
@@ -210,7 +217,10 @@ while($rows2 = mysql_fetch_array($query2))
 	   echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'.$rows2['Bed'].'  Bed(s)';
 	   echo '&nbsp;&nbsp;'.$rows2['Description'].'';
       echo '</fieldset></div><br></label>	';
-   }echo '</form>';
+	  }
+	 echo '<input type="submit" data-role="button" data-theme="b" id="button1" value="Reserve" />';
+   echo '</form>';
+   
 echo '</div>';
 
   

@@ -6,7 +6,38 @@
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
  
+ <script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+$(document).on('pageinit', function () {
+
+    $("#cust").validate({
+        rules: {
+          Contact_no: {
+				required: true,
+					minlength: 11,
+					maxlength: 11
+				}
+				
+	        },
+        submitHandler: function (form) { // for demo
+           sjdhskjfhdkjfhdj; // for demo
+            return false; // for demo
+        }
+    });
+
+});
+</script>
  
+ <style>
+label.error { 
+
+	color: red; 
+	
+}
+</style>
+
 </head>
 
 <body>
@@ -43,7 +74,7 @@
 	
 	{
 	
-	echo '<form action="editcus-exec.php" method="post" name="">';
+	echo '<form action="editcus-exec.php" method="post" name="cust" id="cust">';
 	
 	
 	
@@ -61,7 +92,7 @@
 					
 				echo '<input type="text" name="Name"  placeholder="Name" value="'. $row['Name'] .'">';
            
-				echo '<input type="text" placeholder="Contact Number" maxlength="11" onkeypress="return isNumberKey(event)" name="Contact_no" value="'. $row['Contact_no'] .'">';
+				echo '<input type="text" placeholder="Contact Number" class="required" onkeypress="return isNumberKey(event)" id="Contact_no" name="Contact_no" value="'. $row['Contact_no'] .'">';
              
 				echo '<td><input name="Input" type="submit" value="Save" data-theme="a" /></td>';
 			}

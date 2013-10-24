@@ -28,6 +28,13 @@ $(document).on('pageinit', function () {
 </script>
  
  
+ <style>
+label.error { 
+
+	color: red; 
+	
+}
+</style>
 </head>
 
 <body>

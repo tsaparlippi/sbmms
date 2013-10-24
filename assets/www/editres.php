@@ -5,6 +5,36 @@
 <link rel="stylesheet" href="css/jquery.mobile.min.css" />
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.min.js"></script>
+
+<script type="text/javascript" src="js/jquery.validate.js"></script>
+<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+
+<script type="text/javascript">
+$(document).on('pageinit', function () {
+
+    $("#reserve").validate({
+        rules: {
+          Contact_no: {
+				required: true,
+					minlength: 11,
+					maxlength: 11
+				},
+				
+			 Amount: {
+				required: true,
+					maxlength: 4,
+				}
+		
+		 
+        },
+        submitHandler: function (form) { // for demo
+           sjdhskjfhdkjfhdj; // for demo
+            return false; // for demo
+        }
+    });
+
+});
+</script>
  
  
 </head>
@@ -31,7 +61,7 @@
 </script>
 
 <div data-role="header" data-theme="d">
-			<h1>Edit Customer</h1>
+			<h1>Edit Reservation</h1>
 
 		</div>
 
@@ -43,7 +73,7 @@
 	
 	{
 	
-	echo '<form action="editres-exec.php" method="post" name="">';
+	echo '<form action="editres-exec.php" name="reserve" id="reserve" method="post" >';
 	
 	
 	
@@ -65,11 +95,11 @@
 				
 				echo '<input type="text" name="Address"  placeholder="Address" value="'. $row['Address'] .'">';
            
-				echo '<input type="text" placeholder="Contanct_no" onkeypress="return isNumberKey(event)" name="Contact_no" value="'. $row['Contact_no'] .'">';
+				echo '<input type="text" placeholder="Contanct_no" class="required" onkeypress="return isNumberKey(event)" id="Contact_no" name="Contact_no" value="'. $row['Contact_no'] .'">';
 				
 				echo '<input type="text" name="Payment"  placeholder="Payment" value="'. $row['Payment'] .'">';
 				
-				echo '<input type="text" name="Amount"  placeholder="Amount" value="'. $row['Amount'] .'">';
+				echo '<input type="text" name="Amount" id="Amount" class="required" placeholder="Amount" value="'. $row['Amount'] .'">';
              
 				echo '<td><input name="Input" type="submit" value="Save" data-theme="a" /></td>';
 			}

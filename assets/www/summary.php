@@ -12,6 +12,13 @@
  
 </head>
  
+ <style>
+label.error { 
+
+	color: red; 
+	
+}
+</style>
 
 <body>
 

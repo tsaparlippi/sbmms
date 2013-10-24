@@ -40,7 +40,7 @@
 			
 			
 				echo '<center>';
-				echo '<table width="600" border="0" cellpadding="0">';
+				echo '<table>';
 				echo '<tr>';
 				echo '<td width="87" valign="top"><div align = "right"/>  Name:</td>';
 				echo '<td width="281"><div align = "left"/>&nbsp; &nbsp; &nbsp;<b>'.$Name.'</b></td>';
